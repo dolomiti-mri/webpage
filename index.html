@@ -88,6 +88,9 @@
       transition: opacity 0.2s, color 0.2s;
     }
     nav a:hover { opacity: 1; color: var(--teal); }
+    nav { display: flex; align-items: center; }
+    nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
+    nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
     nav a.nav-aeyes { opacity: 1; color: var(--teal); font-weight: 500; }
 
     /* ── Hero ── */
@@ -537,6 +540,7 @@
       header { padding: 1.2rem 1.5rem; }
       nav a { display: none; }
       nav a.nav-aeyes { display: inline; margin-left: 0; }
+      nav a.lang { display: inline-flex; margin-left: 1rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
     }
   </style>
@@ -564,6 +568,7 @@
     <a href="#diagnostika">Diagnostika</a>
     <a href="#kontakt">Kontakt</a>
     <a href="aeyes.html" class="nav-aeyes">aEyes</a>
+    <a href="en/index.html" class="lang" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
   </nav>
 </header>
 
