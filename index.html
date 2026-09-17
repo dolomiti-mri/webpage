@@ -88,6 +88,7 @@
       transition: opacity 0.2s, color 0.2s;
     }
     nav a:hover { opacity: 1; color: var(--teal); }
+    nav a.nav-aeyes { opacity: 1; color: var(--teal); font-weight: 500; }
 
     /* ── Hero ── */
     .hero {
@@ -534,7 +535,8 @@
       .contact { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
       section { padding: 5rem 2rem; }
       header { padding: 1.2rem 1.5rem; }
-      nav { display: none; }
+      nav a { display: none; }
+      nav a.nav-aeyes { display: inline; margin-left: 0; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
     }
   </style>
@@ -561,6 +563,7 @@
     <a href="#o-nas">O nás</a>
     <a href="#diagnostika">Diagnostika</a>
     <a href="#kontakt">Kontakt</a>
+    <a href="aeyes.html" class="nav-aeyes">aEyes</a>
   </nav>
 </header>
 
