@@ -7,6 +7,21 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+  <link rel="canonical" href="https://montesmedica.cz/en/" />
+  <link rel="alternate" hreflang="cs" href="https://montesmedica.cz/" />
+  <link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://montesmedica.cz/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MontesMedica" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://montesmedica.cz/en/" />
+  <meta property="og:title" content="MontesMedica – MRI centre, Central Bohemia" />
+  <meta property="og:description" content="We are preparing to open a modern MRI centre in the Central Bohemian Region." />
+  <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1a6b6b" />
   <meta name="description" content="We are preparing to open a modern MRI centre in the Central Bohemian Region." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,6 +105,8 @@
     nav { display: flex; align-items: center; }
     nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
     nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
+    .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: var(--ink); }
+    .burger svg { width: 22px; height: 22px; display: block; }
     nav a.nav-aeyes { opacity: 1; color: var(--teal); font-weight: 500; }
 
     /* ── Hero ── */
@@ -538,6 +555,11 @@
       section { padding: 5rem 2rem; }
       header { padding: 1.2rem 1.5rem; }
       nav a { display: none; }
+      .burger { display: block; }
+      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(26,107,107,0.12); }
+      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(26,107,107,0.12); }
+      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
+      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(245,241,235,0.97); backdrop-filter: blur(12px); margin: 0; }
       nav a.nav-aeyes { display: inline; margin-left: 0; }
       nav a.lang { display: inline-flex; margin-left: 1rem; }
       nav { margin-left: 1rem; }
@@ -563,6 +585,7 @@
     <a href="#kontakt">Contact</a>
     <a href="aeyes.html" class="nav-aeyes">aEyes</a>
     <a href="../index.html" class="lang" hreflang="cs" lang="cs" title="Česky"><svg viewBox="0 0 6 4" aria-hidden="true"><rect width="6" height="2" fill="#fff"/><rect y="2" width="6" height="2" fill="#d7141a"/><path d="M0,0L3,2L0,4z" fill="#11457e"/></svg>CS</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </header>
 
@@ -620,8 +643,8 @@
     <div class="stat-label">Ionising radiation</div>
   </div>
   <div class="stat">
-    <div class="stat-num">AI / evolution</div>
-    <div class="stat-label">Assisted analysis</div>
+    <div class="stat-num"><a href="aeyes.html" style="color:inherit;text-decoration:none">aEyes</a></div>
+    <div class="stat-label">AI-assisted analysis</div>
   </div>
   <div class="stat">
     <div class="stat-num">24/7</div>
@@ -765,7 +788,7 @@
 <footer>
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
-  <div>© 2025 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
+  <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
 </footer>
 
 <script>
@@ -774,6 +797,17 @@
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 60);
   });
+
+  // Mobile menu
+  const nav = document.querySelector('nav');
+  function toggleNav(btn) {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    nav.querySelector('.burger').setAttribute('aria-expanded', 'false');
+  }));
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');

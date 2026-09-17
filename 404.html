@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stránka nenalezena · MontesMedica</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --ink: #0d1a1f; --paper: #f5f1eb; --teal: #1a6b6b; --teal2: #24918f; --gold: #b8893a; }
+    body {
+      background: var(--ink); color: #fff;
+      font-family: 'DM Sans', sans-serif; font-weight: 300;
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem 1rem;
+    }
+    .mark { width: 220px; height: auto; margin-bottom: 2.4rem; opacity: 0.9; }
+    .code { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal2); margin-bottom: 1.2rem; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 300; line-height: 1.1; }
+    h1 em { font-style: italic; color: var(--teal2); }
+    .divider { width: 48px; height: 2px; background: var(--gold); margin: 2rem auto; }
+    p { color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 420px; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 2.4rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.8rem;
+      background: var(--teal); color: #fff; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.25s;
+    }
+    .btn:hover { background: var(--teal2); }
+    .btn.ghost { background: transparent; border: 1px solid rgba(36,145,143,0.5); }
+    .btn.ghost:hover { background: rgba(36,145,143,0.15); }
+  </style>
+</head>
+<body>
+  <img class="mark" src="/assets/img/logo-mountain-light.png" alt="" width="442" height="102" />
+  <p class="code">404 · Not found</p>
+  <h1>Tuto stránku <em>jsme nenašli</em></h1>
+  <div class="divider"></div>
+  <p>Stránka neexistuje nebo byla přesunuta.<br><span lang="en">This page does not exist or has been moved.</span></p>
+  <div class="links">
+    <a class="btn" href="/">Úvodní stránka</a>
+    <a class="btn ghost" href="/aeyes.html">aEyes</a>
+    <a class="btn ghost" href="/en/" lang="en">English</a>
+  </div>
+</body>
+</html>
