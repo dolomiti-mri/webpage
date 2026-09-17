@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>aEyes by MontesMedica</title>
-  <meta name="description" content="aEyes by MontesMedica — sada AI expertních systémů pro MR snímky. První modul: AI druhé čtení MR kolene." />
+  <meta name="description" content="aEyes by MontesMedica — a suite of AI expert systems for MR scans. First module: an AI second reader for knee MRI." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -520,30 +520,30 @@
     <span class="logo-text">Montes<span>Medica</span></span>
   </a>
   <nav>
-    <a href="index.html" class="nav-home">← MR pracoviště</a>
-    <a href="#koleno">Koleno</a>
-    <a href="#jak-to-funguje">Jak to funguje</a>
-    <a href="#moduly">Moduly</a>
-    <a href="#plan">Plán</a>
+    <a href="index.html" class="nav-home">← MRI centre</a>
+    <a href="#koleno">Knee</a>
+    <a href="#jak-to-funguje">How it works</a>
+    <a href="#moduly">Modules</a>
+    <a href="#plan">Roadmap</a>
     <a href="aeyes.html" class="active">aEyes</a>
-    <a href="en/aeyes.html" class="lang" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
+    <a href="../aeyes.html" class="lang" hreflang="cs" lang="cs" title="Česky"><svg viewBox="0 0 6 4" aria-hidden="true"><rect width="6" height="2" fill="#fff"/><rect y="2" width="6" height="2" fill="#d7141a"/><path d="M0,0L3,2L0,4z" fill="#11457e"/></svg>CS</a>
   </nav>
 </header>
 
 <!-- ── Hero ── -->
 <section class="hero">
   <div>
-    <p class="hero-eyebrow">AI expertní systémy · Praha</p>
+    <p class="hero-eyebrow">AI expert systems · Prague</p>
     <h1 class="hero-title"><em>a</em>Eyes</h1>
     <p class="hero-sub">by MontesMedica</p>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      Sada AI expertních systémů pro snímky magnetické rezonance — jeden specializovaný „druhý čtenář“ pro každou oblast těla. Začínáme kolenem: detekce abnormalit, ruptury předního zkříženého vazu a menisku.
+      A suite of AI expert systems for MRI — one specialised second reader for each body region. We start with the knee: detecting abnormalities, anterior cruciate ligament tears and meniscal tears.
     </p>
     <div class="hero-pills">
-      <span class="pill now">MR kolene · nyní</span>
-      <span class="pill">MR páteře · 2027</span>
-      <span class="pill">Histopatologie · 2028</span>
+      <span class="pill now">Knee MRI · now</span>
+      <span class="pill">Spine MRI · 2027</span>
+      <span class="pill">Histopathology · 2028</span>
     </div>
   </div>
 
@@ -578,80 +578,80 @@
 <!-- ── Principles ── -->
 <div class="stats reveal">
   <div class="stat">
-    <div class="stat-num">Druhý čtenář</div>
-    <div class="stat-label">Podpora rozhodování radiologa, ne jeho náhrada. Závěr vždy dělá lékař.</div>
+    <div class="stat-num">Second reader</div>
+    <div class="stat-label">Supports the radiologist's decision rather than replacing it. The physician always makes the final call.</div>
   </div>
   <div class="stat">
     <div class="stat-num">Self-hosted</div>
-    <div class="stat-label">Běží přímo v nemocnici na jedné GPU. Data pacientů neopouštějí pracoviště.</div>
+    <div class="stat-label">Runs inside the hospital on a single GPU. Patient data never leaves the site.</div>
   </div>
   <div class="stat">
-    <div class="stat-num">Vysvětlitelné</div>
-    <div class="stat-label">Mapy pozornosti ukazují, které řezy vedly k nálezu.</div>
+    <div class="stat-num">Explainable</div>
+    <div class="stat-label">Attention maps show which slices led to a finding.</div>
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
-    <div class="stat-label">Od začátku vyvíjeno jako zdravotnický prostředek třídy IIa.</div>
+    <div class="stat-label">Designed from day one as a Class IIa medical device.</div>
   </div>
 </div>
 
 <!-- ── Why knee ── -->
 <section id="koleno">
   <div class="reveal">
-    <p class="section-label">První modul · aEyes-knee</p>
-    <h2 class="section-title">MR kolene: vysoký objem vyšetření,<br><em>úzkým hrdlem je popis</em></h2>
+    <p class="section-label">First module · aEyes-knee</p>
+    <h2 class="section-title">Knee MRI is high-volume,<br><em>and the read is the bottleneck</em></h2>
   </div>
   <div class="cards">
     <div class="card reveal">
-      <p class="card-kicker">Objem</p>
-      <h3 class="card-title">Tři roviny, desítky řezů u každé studie</h3>
-      <p class="card-text">MR kolene patří k nejčastějším vyšetřením. Počet přístrojů roste, kapacita radiologů ale stejným tempem neroste.</p>
+      <p class="card-kicker">Volume</p>
+      <h3 class="card-title">Three planes, dozens of slices, every study</h3>
+      <p class="card-text">Knee MRI is among the most frequent examinations. Scanner numbers keep growing; radiologist capacity does not grow with them.</p>
     </div>
     <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Rozhodnutí</p>
-      <h3 class="card-title">Dva nálezy posílají pacienta k operaci</h3>
-      <p class="card-text">Ruptura LCA a menisku. Ve studii Stanford MRNet zvýšila asistence modelu specificitu expertů u LCA o 4,8 bodu — zhruba 5 ze 100 zdravých pacientů ušetřeno zbytečného chirurgického došetřování.</p>
+      <p class="card-kicker">Decisions</p>
+      <h3 class="card-title">Two findings route a patient to surgery</h3>
+      <p class="card-text">ACL and meniscal tears. In the Stanford MRNet reader study, model assistance raised expert ACL specificity by 4.8 points — about 5 in every 100 healthy patients spared an unnecessary surgical work-up.</p>
     </div>
     <div class="card reveal" style="transition-delay:0.3s">
-      <p class="card-kicker">Dostupnost</p>
-      <h3 class="card-title">Nový přístroj, stejná kapacita popisů</h3>
-      <p class="card-text">Praha-východ má přes 200 tisíc obyvatel a žádnou místní magnetickou rezonanci. Naše pracoviště potřebuje rychlé a konzistentní popisy od prvního dne.</p>
+      <p class="card-kicker">Access</p>
+      <h3 class="card-title">New scanners, same reporting capacity</h3>
+      <p class="card-text">Praha-východ has more than 200,000 inhabitants and no local MRI. Our centre needs fast, consistent reads from day one.</p>
     </div>
   </div>
-  <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (MRNet reader study)</p>
+  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (MRNet reader study)</p>
 </section>
 
 <!-- ── Pipeline ── -->
 <section class="pipeline" id="jak-to-funguje">
   <div class="reveal">
-    <p class="section-label">Jak to funguje</p>
-    <h2 class="section-title">DICOM dovnitř,<br><em>strukturovaný druhý názor</em> ven</h2>
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">DICOM in,<br><em>structured second opinion</em> out</h2>
   </div>
   <div class="steps">
     <div class="step reveal">
       <div class="step-num">01</div><div class="step-bar"></div>
-      <h3 class="step-title">DICOM studie</h3>
-      <p class="step-text">Sagitální, koronální a axiální série přímo z přístroje nebo z PACS.</p>
+      <h3 class="step-title">DICOM study</h3>
+      <p class="step-text">Sagittal, coronal and axial series straight from the scanner or PACS.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.1s">
       <div class="step-num">02</div><div class="step-bar"></div>
-      <h3 class="step-title">Enkodér řezů</h3>
-      <p class="step-text">Předtrénovaná 2D síť s 2,5D kontextem vytvoří reprezentaci každého řezu.</p>
+      <h3 class="step-title">Slice encoder</h3>
+      <p class="step-text">A pretrained 2D backbone with 2.5D context produces one embedding per slice.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.2s">
       <div class="step-num">03</div><div class="step-bar"></div>
-      <h3 class="step-title">Agregace série</h3>
-      <p class="step-text">Attention-MIL nebo transformer — model se sám učí, na kterých řezech záleží.</p>
+      <h3 class="step-title">Series pooling</h3>
+      <p class="step-text">Attention-MIL or transformer pooling — the model learns which slices matter.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.3s">
       <div class="step-num">04</div><div class="step-bar"></div>
-      <h3 class="step-title">Fúze rovin</h3>
-      <p class="step-text">Spojení všech rovin do pravděpodobností: abnormalita, ruptura LCA, ruptura menisku.</p>
+      <h3 class="step-title">Plane fusion</h3>
+      <p class="step-text">All planes fused into probabilities: abnormality, ACL tear, meniscal tear.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.4s">
       <div class="step-num">05</div><div class="step-bar"></div>
-      <h3 class="step-title">Druhý názor</h3>
-      <p class="step-text">Pravděpodobnosti, mapy pozornosti na úrovni řezů a strukturovaná zpráva zpět do PACS/RIS.</p>
+      <h3 class="step-title">Second opinion</h3>
+      <p class="step-text">Probabilities, slice-level attention maps and a structured report back to PACS/RIS.</p>
     </div>
   </div>
 </section>
@@ -659,40 +659,40 @@
 <!-- ── Suite ── -->
 <section class="suite" id="moduly">
   <div class="reveal">
-    <p class="section-label">Sada aEyes</p>
-    <h2 class="section-title">Jeden expertní systém<br><em>pro každý orgán</em></h2>
-    <p class="section-lead">Všechny moduly sdílejí jednu platformu: příjem DICOM, inferenci, monitoring a systém řízení kvality dle MDR. Každý další orgán tak využije vše, co už je postavené.</p>
+    <p class="section-label">The aEyes suite</p>
+    <h2 class="section-title">One expert system<br><em>per organ</em></h2>
+    <p class="section-lead">Every module shares one platform: DICOM ingestion, inference, monitoring and an MDR quality system. Each new organ reuses everything already built.</p>
   </div>
   <div class="modules">
     <div class="module current reveal">
-      <p class="module-when">Nyní · MR kolene</p>
+      <p class="module-when">Now · knee MRI</p>
       <h3 class="module-name">aEyes-<span>knee</span></h3>
-      <p class="module-text">Abnormalita, ruptura LCA, ruptura menisku. První modul a regulatorní šablona pro všechny další.</p>
+      <p class="module-text">Abnormality, ACL tear, meniscal tear. The first module and the regulatory template for the rest.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.1s">
-      <p class="module-when">2027 · MR páteře</p>
+      <p class="module-when">2027 · spine MRI</p>
       <h3 class="module-name">aEyes-<span>spine</span></h3>
-      <p class="module-text">Bederní páteř. Stejný enkodér, stejná agregace, stejný instalační balíček.</p>
+      <p class="module-text">Lumbar spine. Same encoder, same pooling, same deployment package.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.2s">
-      <p class="module-when">2028 · Histopatologie</p>
+      <p class="module-when">2028 · histopathology</p>
       <h3 class="module-name">aEyes-<span>path</span></h3>
-      <p class="module-text">Celoplošné snímky preparátů v gigapixelovém rozlišení, opět attention-MIL.</p>
+      <p class="module-text">Gigapixel whole-slide images, attention-MIL again.</p>
     </div>
     <div class="module reveal">
-      <p class="module-when">Navazující · RTG</p>
+      <p class="module-when">Adjacent · X-ray</p>
       <h3 class="module-name">aEyes-<span>fracture</span></h3>
-      <p class="module-text">Detekce zlomenin na rentgenových snímcích, podle zájmu partnerů.</p>
+      <p class="module-text">Fracture detection on X-rays, when partners ask for it.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.1s">
-      <p class="module-when">Hotovo · klinické NLP</p>
+      <p class="module-when">Built · clinical NLP</p>
       <h3 class="module-name">aEyes-<span>text</span></h3>
-      <p class="module-text">Rozpoznávání entit v českých klinických textech a extrakce kódů MKN-10.</p>
+      <p class="module-text">Named-entity recognition in Czech clinical text and ICD-10 code extraction.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.2s">
-      <p class="module-when">Sdílená platforma</p>
-      <h3 class="module-name">Jeden <span>stack</span></h3>
-      <p class="module-text">Od trénování po nasazení u lůžka: jedna pracovní stanice s GPU na pracoviště, bez dat pacientů v cloudu.</p>
+      <p class="module-when">Shared platform</p>
+      <h3 class="module-name">One <span>stack</span></h3>
+      <p class="module-text">From training to bedside: one GPU workstation per site, no patient data in the cloud.</p>
     </div>
   </div>
 </section>
@@ -700,45 +700,45 @@
 <!-- ── Roadmap ── -->
 <section id="plan">
   <div class="reveal">
-    <p class="section-label">Plán</p>
-    <h2 class="section-title">Demo, pilot, <em>certifikace</em></h2>
-    <p class="section-lead">Veřejná data nás dovedou k demonstraci na úrovni současného stavu poznání. Certifikovaný prostředek budeme trénovat na prospektivně anotovaných studiích z našeho vlastního MR pracoviště a partnerských nemocnic.</p>
+    <p class="section-label">Roadmap</p>
+    <h2 class="section-title">Demo, pilot, <em>CE mark</em></h2>
+    <p class="section-lead">Public datasets get us to a state-of-the-art demo. The certified device will be trained on prospectively labelled studies from our own MRI centre and partner hospitals.</p>
   </div>
   <div class="roadmap-grid">
     <div class="phase current reveal">
       <div class="phase-when">Q4 2026</div>
       <p class="phase-title">Proof of concept</p>
       <ul>
-        <li>Přesnost na úrovni publikovaného SOTA na datasetu MRNet</li>
-        <li>Externí validace na nezávislých datech</li>
-        <li>Demo běžící na jedné GPU</li>
+        <li>Accuracy on par with published state of the art on MRNet</li>
+        <li>External validation on independent data</li>
+        <li>Self-hosted demo on a single GPU</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.1s">
       <div class="phase-when">H1 2027</div>
-      <p class="phase-title">Klinický pilot</p>
+      <p class="phase-title">Clinical pilot</p>
       <ul>
-        <li>Integrace s DICOM / PACS</li>
-        <li>Čtenářská studie na našem pracovišti nebo v partnerské nemocnici</li>
-        <li>Smlouvy o datech</li>
+        <li>DICOM / PACS integration</li>
+        <li>Reader study at our centre or a partner hospital</li>
+        <li>Data agreements</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.2s">
       <div class="phase-when">H2 2027</div>
-      <p class="phase-title">MDR třída IIa</p>
+      <p class="phase-title">MDR Class IIa</p>
       <ul>
-        <li>Systém řízení kvality ISO 13485</li>
-        <li>Technická dokumentace a klinické hodnocení</li>
-        <li>PoC modulu pro páteř</li>
+        <li>ISO 13485 quality management system</li>
+        <li>Technical documentation and clinical evaluation</li>
+        <li>Spine module proof of concept</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.3s">
       <div class="phase-when">2028</div>
-      <p class="phase-title">CE značka</p>
+      <p class="phase-title">CE mark</p>
       <ul>
-        <li>CE značení aEyes-knee</li>
-        <li>První nasazení v Česku</li>
-        <li>PoC modulu pro histopatologii</li>
+        <li>CE marking for aEyes-knee</li>
+        <li>First deployments in Czechia</li>
+        <li>Histopathology module proof of concept</li>
       </ul>
     </div>
   </div>
@@ -747,10 +747,10 @@
 <!-- ── CTA ── -->
 <section class="cta">
   <div class="reveal">
-    <p class="section-label">Spolupráce</p>
-    <h2 class="section-title">Hledáme partnerské nemocnice, radiology a investory</h2>
-    <p>Pokud vás zajímá pilotní nasazení, čtenářská studie nebo spolupráce na datech, ozvěte se nám.</p>
-    <p class="note">aEyes je ve vývoji a zatím není certifikovaným zdravotnickým prostředkem. Není určen pro klinické použití.</p>
+    <p class="section-label">Partnership</p>
+    <h2 class="section-title">We are looking for partner hospitals, radiologists and investors</h2>
+    <p>If you are interested in a pilot deployment, a reader study or a data partnership, get in touch.</p>
+    <p class="note">aEyes is under development and is not yet a certified medical device. It is not intended for clinical use.</p>
   </div>
   <div class="reveal">
     <a href="mailto:info@montesmedica.cz?subject=aEyes" class="btn">
@@ -763,7 +763,7 @@
 <!-- ── Footer ── -->
 <footer>
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
-  <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; IČ: 24020028</div>
+  <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
 </footer>
 
