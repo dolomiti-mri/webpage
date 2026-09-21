@@ -347,6 +347,7 @@
       padding: 2.6rem 2.2rem;
     }
     .module.current { background: #10282b; }
+    .module.wide { grid-column: span 2; }
     .module-when {
       font-size: 0.68rem;
       letter-spacing: 0.16em;
@@ -509,6 +510,7 @@
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .cards, .modules, .roadmap-grid { grid-template-columns: 1fr; }
+      .module.wide { grid-column: auto; }
       .cta { grid-template-columns: 1fr; gap: 2rem; }
       header { padding: 1.2rem 1rem; }
       nav a { display: none; }
@@ -699,7 +701,7 @@
       <h3 class="module-name">aEyes-<span>fracture</span></h3>
       <p class="module-text">Detekce zlomenin na rentgenových snímcích, podle zájmu partnerů.</p>
     </div>
-    <div class="module reveal" style="transition-delay:0.2s">
+    <div class="module wide reveal" style="transition-delay:0.1s">
       <p class="module-when">Sdílená platforma</p>
       <h3 class="module-name">Jeden <span>stack</span></h3>
       <p class="module-text">Od trénování po nasazení u lůžka: jedna pracovní stanice s GPU na pracoviště, bez dat pacientů v cloudu.</p>
