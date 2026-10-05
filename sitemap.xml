@@ -11,13 +11,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/"/>
   </url>
   <url>
-    <loc>https://montesmedica.cz/aeyes.html</loc>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/aeyes.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/aeyes.html"/>
+    <loc>https://montesmedica.cz/mri.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/mri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/mri.html"/>
   </url>
   <url>
-    <loc>https://montesmedica.cz/en/aeyes.html</loc>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/aeyes.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/aeyes.html"/>
+    <loc>https://montesmedica.cz/en/mri.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/mri.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/mri.html"/>
   </url>
 </urlset>
