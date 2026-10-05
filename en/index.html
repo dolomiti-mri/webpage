@@ -16,13 +16,13 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://montesmedica.cz/en/" />
   <meta property="og:title" content="aEyes by MontesMedica – AI second reader for MRI" />
-  <meta property="og:description" content="AI expert systems for MRI. First module: a second reader for knee MRI." />
+  <meta property="og:description" content="AI expert systems for MRI. First module: a second reader for knee MRI, focused on sports injuries in children and adolescents." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="aEyes by MontesMedica: AI expert systems for MRI. First module: a second reader for knee MRI." />
+  <meta name="description" content="aEyes by MontesMedica: AI expert systems for MRI. First module: a second reader for knee MRI, focused on sports injuries in children and adolescents." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -351,7 +351,7 @@
       padding: 2.6rem 2.2rem;
     }
     .module.current { background: #10282b; }
-    .module.wide { grid-column: span 2; }
+    .module.wide { grid-column: 1 / -1; }
     .module-when {
       font-size: 0.68rem;
       letter-spacing: 0.16em;
@@ -564,7 +564,7 @@
     <p class="hero-sub">by MontesMedica</p>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      AI expert systems for MRI. Each module is a specialised second reader for one body region. The first module reads knee MRI: abnormal finding, anterior cruciate ligament tear and meniscal tear.
+      AI expert systems for MRI. Each module is a specialised second reader for one body region. The first module reads knee MRI: abnormal finding, anterior cruciate ligament tear and meniscal tear. Our focus is sports injuries in children and adolescents.
     </p>
     <div class="hero-pills">
       <span class="pill now">Knee MRI · now</span>
@@ -677,7 +677,7 @@
     <div class="step reveal" style="transition-delay:0.4s">
       <div class="step-num">05</div><div class="step-bar"></div>
       <h3 class="step-title">Second read</h3>
-      <p class="step-text">Probabilities, highlighted slices and a structured report go back to PACS/RIS, at hand while the radiologist reports.</p>
+      <p class="step-text">Probabilities, highlighted slices and a structured report go back to PACS/RIS. The radiologist opens them in the integrated DICOM viewer while reporting.</p>
     </div>
   </div>
 </section>
@@ -687,7 +687,7 @@
   <div class="reveal">
     <p class="section-label">The aEyes suite</p>
     <h2 class="section-title">One expert system<br><em>per organ</em></h2>
-    <p class="section-lead">Every module stands on one platform: PACS connection, computation on the workstation, operational monitoring and an MDR quality system. Each new module reuses everything already built.</p>
+    <p class="section-lead">Every module stands on one platform: PACS connection, DICOM viewer, computation on the workstation, operational monitoring and an MDR quality system. Each new module reuses everything already built.</p>
   </div>
   <div class="modules">
     <div class="module current reveal">
@@ -705,15 +705,10 @@
       <h3 class="module-name">aEyes-<span>path</span></h3>
       <p class="module-text">Digitised slides at gigapixel resolution. Same principle: the model learns which parts of the image decide.</p>
     </div>
-    <div class="module reveal">
-      <p class="module-when">Adjacent · X-ray</p>
-      <h3 class="module-name">aEyes-<span>fracture</span></h3>
-      <p class="module-text">Fracture detection on X-rays. Scheduled according to partner hospitals' demand.</p>
-    </div>
-    <div class="module wide reveal" style="transition-delay:0.1s">
+    <div class="module wide reveal">
       <p class="module-when">Shared platform</p>
       <h3 class="module-name">One <span>platform</span></h3>
-      <p class="module-text">From model training to the reading room: one GPU workstation per site, no patient data in the cloud.</p>
+      <p class="module-text">From model training to the reading room. The PACS connection and the DICOM viewer are already built; each new module simply plugs into them. One GPU workstation per site, no patient data in the cloud.</p>
     </div>
   </div>
 </section>
@@ -739,7 +734,7 @@
       <div class="phase-when">H1 2027</div>
       <p class="phase-title">Clinical pilot</p>
       <ul>
-        <li>PACS connection</li>
+        <li>Installation at the pilot site</li>
         <li>Reader study at our centre or a partner hospital</li>
         <li>Data agreements</li>
       </ul>
