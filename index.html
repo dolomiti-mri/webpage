@@ -407,6 +407,121 @@
       background: var(--gold);
     }
 
+
+    /* ── Demo ── */
+    .demo { background: #fff; }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      margin-top: 4rem;
+      align-items: start;
+    }
+    .viewer {
+      background: var(--ink);
+      color: #fff;
+      padding: 1.6rem 1.8rem 1.8rem;
+      border: 1px solid rgba(36,145,143,0.25);
+    }
+    .viewer-head {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal2);
+      margin-bottom: 1.5rem;
+    }
+    .viewer-head span:last-child { color: var(--gold); }
+    .plane { margin-bottom: 1.1rem; }
+    .plane-name {
+      display: flex; justify-content: space-between;
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.45rem;
+    }
+    .plane-name b { font-weight: 400; color: var(--teal2); }
+    .slices { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; }
+    .slices i {
+      display: block; aspect-ratio: 1;
+      background: rgba(36,145,143,0.1);
+      border: 1px solid rgba(36,145,143,0.22);
+    }
+    .slices i.w1 { background: rgba(36,145,143,0.38); }
+    .slices i.w2 { background: rgba(36,145,143,0.75); }
+    .slices i.w3 { background: var(--gold); border-color: var(--gold); }
+    .probs {
+      margin-top: 1.6rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.4rem;
+    }
+    .prob {
+      display: grid; grid-template-columns: minmax(9rem, 1fr) 2fr auto;
+      gap: 1rem; align-items: center;
+      font-size: 0.82rem;
+      margin-bottom: 0.75rem;
+    }
+    .prob-bar { height: 6px; background: rgba(255,255,255,0.08); }
+    .prob-bar i { display: block; height: 100%; background: var(--teal2); }
+    .prob.high .prob-bar i { background: var(--gold); }
+    .prob-val { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.8); min-width: 3.5ch; text-align: right; }
+    .viewer-legend {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+      margin-top: 1.2rem;
+      font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .viewer-legend i { display: inline-block; width: 9px; height: 9px; margin-right: 0.4rem; vertical-align: -1px; }
+    .report {
+      background: var(--faint);
+      padding: 2rem 2.2rem;
+      font-size: 0.88rem; line-height: 1.75;
+    }
+    .report h3 {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); font-weight: 400;
+      margin-bottom: 1.1rem;
+    }
+    .report dl { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1.2rem; }
+    .report dt { color: rgba(13,26,31,0.55); }
+    .report dd { font-weight: 400; }
+    .report p { margin-top: 1.2rem; color: rgba(13,26,31,0.68); font-size: 0.84rem; }
+    .demo-note {
+      font-size: 0.76rem; line-height: 1.7;
+      color: rgba(13,26,31,0.55);
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      margin-top: 1.6rem;
+    }
+    .demo-cta { margin-top: 2.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
+    .btn.teal { background: var(--teal); }
+    .btn.teal:hover { background: var(--teal2); }
+    .demo-cta small { font-size: 0.82rem; line-height: 1.6; color: rgba(13,26,31,0.6); max-width: 360px; }
+
+    /* ── Team ── */
+    .team { background: var(--faint); }
+    .team-group {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal);
+      margin: 3.5rem 0 1rem;
+    }
+    .team-group:first-of-type { margin-top: 4rem; }
+    .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .people.two { grid-template-columns: repeat(2, 1fr); }
+    .person { background: #fff; padding: 2.4rem 2.2rem; }
+    .avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--mist); color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em;
+      margin-bottom: 1.4rem;
+    }
+    .person-name { font-size: 1.1rem; font-weight: 500; }
+    .person-role {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold);
+      margin: 0.4rem 0 0.9rem;
+    }
+    .person-text { font-size: 0.86rem; line-height: 1.7; color: rgba(13,26,31,0.65); }
+
     /* ── Disclaimer / CTA ── */
     .cta {
       background: var(--teal);
@@ -510,6 +625,8 @@
       .cards, .modules, .roadmap-grid { grid-template-columns: 1fr; }
       .module.wide { grid-column: auto; }
       .cta { grid-template-columns: 1fr; gap: 2rem; }
+      .demo-grid { grid-template-columns: 1fr; }
+      .people, .people.two { grid-template-columns: 1fr; }
       header { padding: 1.2rem 1rem; }
       nav { margin-left: 1rem; }
       nav a { display: none; white-space: nowrap; }
@@ -541,8 +658,10 @@
   <nav>
     <a href="#koleno">Koleno</a>
     <a href="#jak-to-funguje">Jak to funguje</a>
+    <a href="#demo">Demo</a>
     <a href="#moduly">Moduly</a>
     <a href="#plan">Plán</a>
+    <a href="#tym">Tým</a>
     <a href="#spoluprace">Spolupráce</a>
     <a href="mri.html" class="nav-mri">MR pracoviště</a>
     <a href="en/index.html" class="lang" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
@@ -671,6 +790,63 @@
   </div>
 </section>
 
+<!-- ── Demo ── -->
+<section class="demo" id="demo">
+  <div class="reveal">
+    <p class="section-label">Demo</p>
+    <h2 class="section-title">Co radiolog <em>uvidí</em></h2>
+    <p class="section-lead">Výstup aEyes-knee pro jednu studii: pravděpodobnost každého ze tří nálezů, řezy, které k nim vedly, a návrh strukturované zprávy. Snímky z vývojového datasetu nesmíme zveřejnit, proto je výstup nakreslený, ne vyfocený. Skutečný běh modelu ukážeme na online schůzce.</p>
+  </div>
+  <div class="demo-grid">
+    <div class="viewer reveal" aria-label="Ilustrace · ne data pacienta">
+      <div class="viewer-head"><span>aEyes-knee · druhé čtení</span><span>Ilustrace · ne data pacienta</span></div>
+      <div class="plane">
+        <div class="plane-name"><span>Sagitální · PD · 24 řezů</span><b>řezy 11–14</b></div>
+        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i class="w1"></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w2"></i><i class="w3"></i><i class="w3"></i><i class="w3"></i><i class="w3"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i class="w1"></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="plane">
+        <div class="plane-name"><span>Koronální · T2 FS · 24 řezů</span><b>řezy 9–10</b></div>
+        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w3"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i></i><i></i><i class="w1"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="plane">
+        <div class="plane-name"><span>Axiální · T2 FS · 24 řezů</span><b>řezy 10–11</b></div>
+        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="probs">
+        <div class="prob high"><span>Abnormální nález</span><div class="prob-bar"><i style="width:91%"></i></div><span class="prob-val">0,91</span></div>
+        <div class="prob high"><span>Ruptura LCA</span><div class="prob-bar"><i style="width:87%"></i></div><span class="prob-val">0,87</span></div>
+        <div class="prob"><span>Ruptura menisku</span><div class="prob-bar"><i style="width:24%"></i></div><span class="prob-val">0,24</span></div>
+      </div>
+      <div class="viewer-legend">
+        <span><i style="background:rgba(36,145,143,0.75)"></i>Váha řezu pro nález</span>
+        <span><i style="background:#b8893a"></i>Nejvyšší váha</span>
+        <span>Ilustrační hodnoty</span>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:0.15s">
+      <div class="report">
+        <h3>Návrh strukturované zprávy</h3>
+        <dl>
+          <dt>Studie</dt><dd>MR kolenního kloubu, 3 roviny</dd>
+          <dt>Abnormální nález</dt><dd>pravděpodobný (0,91)</dd>
+          <dt>Přední zkřížený vaz</dt><dd>ruptura pravděpodobná (0,87), sag. řezy 11–14</dd>
+          <dt>Meniskus</dt><dd>ruptura nepravděpodobná (0,24)</dd>
+          <dt>K ověření</dt><dd>SAG 11–14, COR 9–10</dd>
+        </dl>
+        <p>Zpráva je návrh. Radiolog ji v popisovně potvrdí, upraví nebo zamítne; závěr je vždy jeho.</p>
+      </div>
+      <p class="demo-note">Ilustrace výstupu, ne výsledek modelu ani data pacienta. aEyes není certifikovaný zdravotnický prostředek a není určen pro klinické použití.</p>
+    </div>
+  </div>
+  <div class="demo-cta reveal">
+    <a href="mailto:info@montesmedica.cz?subject=aEyes%20demo" class="btn teal">
+      Domluvit živé demo · 30 min
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <small>Online schůzka. Ukážeme běh modelu na studiích z veřejného datasetu: DICOM na vstupu, zvýrazněné řezy, zpráva na výstupu.</small>
+  </div>
+</section>
+
 <!-- ── Suite ── -->
 <section class="suite" id="moduly">
   <div class="reveal">
@@ -745,6 +921,51 @@
         <li>První nasazení v Česku</li>
         <li>PoC modulu pro histopatologii</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── Team ── -->
+<section class="team" id="tym">
+  <div class="reveal">
+    <p class="section-label">Tým</p>
+    <h2 class="section-title">Medicína, software<br><em>a umělá inteligence</em></h2>
+    <p class="section-lead">Malý tým v Praze. Zakladatelé spojují zkušenosti z medicíny, vývoje softwaru a umělé inteligence; vývoj aEyes a provoz společnosti zajišťují tři další lidé.</p>
+  </div>
+  <p class="team-group reveal">Zakladatelé</p>
+  <div class="people two">
+    <div class="person reveal">
+      <div class="avatar" aria-hidden="true">JC</div>
+      <h3 class="person-name">Jindřich Cincibuch</h3>
+      <p class="person-role">Spoluzakladatel · jednatel</p>
+      <p class="person-text">Profil doplníme.</p>
+    </div>
+    <div class="person reveal" style="transition-delay:0.1s">
+      <div class="avatar" aria-hidden="true">MB</div>
+      <h3 class="person-name">Martin Baloun</h3>
+      <p class="person-role">Spoluzakladatel · jednatel</p>
+      <p class="person-text">Profil doplníme.</p>
+    </div>
+  </div>
+  <p class="team-group reveal">Tým</p>
+  <div class="people">
+    <div class="person reveal">
+      <div class="avatar" aria-hidden="true">MŠ</div>
+      <h3 class="person-name">Marek Šust</h3>
+      <p class="person-role">Vývoj</p>
+      <p class="person-text">Vývoj platformy aEyes.</p>
+    </div>
+    <div class="person reveal" style="transition-delay:0.1s">
+      <div class="avatar" aria-hidden="true">PV</div>
+      <h3 class="person-name">Pavel Vágnerek</h3>
+      <p class="person-role">Vývoj</p>
+      <p class="person-text">Vývoj platformy aEyes.</p>
+    </div>
+    <div class="person reveal" style="transition-delay:0.2s">
+      <div class="avatar" aria-hidden="true">LK</div>
+      <h3 class="person-name">Laura Kosáková</h3>
+      <p class="person-role">Back office</p>
+      <p class="person-text">Administrativa a provoz společnosti.</p>
     </div>
   </div>
 </section>
