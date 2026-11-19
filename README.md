@@ -12,7 +12,8 @@ Statický web MontesMedica s.r.o. Nasazuje se automaticky přes GitHub Pages př
 | `ochrana-osobnich-udaju.html` – ochrana osobních údajů | `en/privacy.html` |
 | `aeyes.html` – jen přesměrování staré adresy na `/` | `en/aeyes.html` → `/en/` |
 
-Každá stránka má vlastní CSS v `<head>`; společné jsou jen obrázky v `assets/img/` (logo, favikona, OG obrázek).
+Každá stránka má vlastní CSS v `<head>`; společné jsou obrázky v `assets/img/` (logo, favikona, OG obrázek)
+a písma v `assets/fonts/` (Cormorant Garamond a DM Sans, licence SIL OFL 1.1, načítaná lokálně přes `fonts.css`).
 Při úpravě obsahu upravte vždy obě jazykové verze.
 
 ## Push jako dolomiti-mri

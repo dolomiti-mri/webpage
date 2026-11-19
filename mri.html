@@ -24,9 +24,7 @@
   <meta name="theme-color" content="#1a6b6b" />
   <meta name="description" content="Připravujeme pracoviště magnetické rezonance ve Středočeském kraji. Projekt je ve fázi přípravy." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -268,17 +266,6 @@
     .corner-bl { bottom: 40px; left: 40px; border-width: 0 0 1px 1px; }
     .corner-br { bottom: 40px; right: 40px; border-width: 0 1px 1px 0; }
 
-    .hero-data {
-      position: absolute;
-      bottom: 3rem; left: 3rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      color: var(--teal);
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeUp 1s 1.4s forwards;
-    }
-    .hero-data p { margin-top: 0.3rem; opacity: 0.6; }
 
     /* ── Sections ── */
     section { padding: 7rem 5rem; }
@@ -408,7 +395,6 @@
 
     /* ── Team ── */
     .features.team { padding-top: 0; }
-    .features-grid.four { grid-template-columns: repeat(4, 1fr); }
     .team-note {
       font-size: 0.92rem; line-height: 1.8;
       color: rgba(13,26,31,0.7);
@@ -416,11 +402,6 @@
     }
     .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
     .team-note a:hover { border-bottom-color: var(--teal); }
-    .team-backing {
-      font-size: 0.78rem; line-height: 1.7;
-      color: rgba(13,26,31,0.6);
-      margin-top: 0.8rem;
-    }
 
     /* ── Contact ── */
     .contact {
@@ -542,15 +523,12 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .hero-eyebrow, .hero-title, .hero-divider, .hero-lead, .hero-cta, .hero-data { animation: none; opacity: 1; transform: none; }
+      .hero-eyebrow, .hero-title, .hero-divider, .hero-lead, .hero-cta { animation: none; opacity: 1; transform: none; }
       .ring, .ring-core, .scan-line { animation: none; }
       .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
-    @media (max-width: 1200px) {
-      .features-grid.four { grid-template-columns: repeat(2, 1fr); }
-    }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
@@ -560,7 +538,7 @@
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .features { padding: 5rem 2rem; }
-      .features-grid, .features-grid.four { grid-template-columns: 1fr; gap: 2px; }
+      .features-grid { grid-template-columns: 1fr; gap: 2px; }
       .contact { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
       section { padding: 5rem 2rem; }
       header { padding: 1.2rem 1.5rem; }
@@ -636,10 +614,6 @@
     <div class="corner corner-tr"></div>
     <div class="corner corner-bl"></div>
     <div class="corner corner-br"></div>
-    <div class="hero-data">
-      <strong>MR Diagnostika</strong>
-      <p>Středočeský kraj</p>
-    </div>
   </div>
 </section>
 
@@ -648,10 +622,6 @@
   <div class="stat">
     <div class="stat-num">1,5 T</div>
     <div class="stat-label">Plánovaný přístroj</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Středočeský kraj</div>
-    <div class="stat-label">Lokalita</div>
   </div>
   <div class="stat">
     <div class="stat-num">V přípravě</div>
@@ -738,26 +708,21 @@
     <p class="section-label">Tým</p>
     <h2 class="features-title">Kdo za firmou stojí</h2>
   </div>
-  <div class="features-grid four">
+  <div class="features-grid">
     <div class="feature-card reveal">
-      <h3 class="feature-title">Ortopedie</h3>
-      <p class="feature-text">Ortopedický chirurg z klinické praxe. Určuje, co má systém hodnotit a jak má vypadat výstup pro lékaře.</p>
+      <h3 class="feature-title">Medicína</h3>
+      <p class="feature-text">Ortopedický chirurg z klinické praxe.</p>
     </div>
-    <div class="feature-card reveal" style="transition-delay:0.1s">
-      <h3 class="feature-title">Umělá inteligence</h3>
-      <p class="feature-text">Strojové učení a analýza medicínského obrazu. Návrh, trénování a validace modelů.</p>
+    <div class="feature-card reveal" style="transition-delay:0.15s">
+      <h3 class="feature-title">Technologie</h3>
+      <p class="feature-text">Software a IT pracoviště.</p>
     </div>
-    <div class="feature-card reveal" style="transition-delay:0.2s">
-      <h3 class="feature-title">Software</h3>
-      <p class="feature-text">Vývoj a provoz softwaru, integrace do nemocničních systémů (PACS, DICOM).</p>
-    </div>
-    <div class="feature-card reveal" style="transition-delay:0.3s">
+    <div class="feature-card reveal" style="transition-delay:0.30s">
       <h3 class="feature-title">Business</h3>
-      <p class="feature-text">Spolupráce s nemocnicemi, financování a granty.</p>
+      <p class="feature-text">Financování a příprava projektu.</p>
     </div>
   </div>
   <p class="team-note reveal">Rádi vás propojíme s konkrétním členem týmu: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
-  <p class="team-backing reveal">Zázemí: člen programu NVIDIA Inception · Google for Startups Cloud Program · výpočetní čas EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
 
 <!-- ── Contact ── -->
@@ -814,7 +779,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; IČ: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
-  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka <!-- TODO: číslo vložky -->. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="index.html">aEyes</a></div>
+  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka 437016. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="index.html">aEyes</a></div>
 </footer>
 
 <script>
