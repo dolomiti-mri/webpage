@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MRI centre · MontesMedica</title>
+  <title>Planned MRI centre · MontesMedica</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="MontesMedica" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://montesmedica.cz/en/mri.html" />
-  <meta property="og:title" content="MontesMedica – MRI centre, Central Bohemia" />
-  <meta property="og:description" content="We are preparing to open a modern MRI centre in the Central Bohemian Region." />
+  <meta property="og:title" content="MontesMedica – MRI centre in preparation, Central Bohemia" />
+  <meta property="og:description" content="We are preparing an MRI centre in the Central Bohemian Region. The project is at the preparation stage." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="We are preparing to open a modern MRI centre in the Central Bohemian Region." />
+  <meta name="description" content="We are preparing an MRI centre in the Central Bohemian Region. The project is at the preparation stage." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,7 +104,6 @@
     nav a:hover { opacity: 1; color: var(--teal); }
     nav { display: flex; align-items: center; }
     nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
-    nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
     .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: var(--ink); }
     .burger svg { width: 22px; height: 22px; display: block; }
     nav a.nav-aeyes { opacity: 1; color: var(--teal); font-weight: 500; }
@@ -315,6 +314,8 @@
       color: rgba(255,255,255,0.72);
     }
     .about-body p + p { margin-top: 1.4rem; }
+    .about-body a { color: var(--teal2); text-decoration: none; border-bottom: 1px solid rgba(36,145,143,0.5); }
+    .about-body a:hover { border-bottom-color: var(--teal2); }
     .about-accent {
       width: 40px; height: 1px;
       background: var(--gold);
@@ -336,10 +337,10 @@
     .stat:first-child { padding-left: 0; }
     .stat:last-child { border-right: none; }
     .stat-num {
-      font-size: 2.6rem;
+      font-size: clamp(1.6rem, 2.6vw, 2.4rem);
       font-weight: 300;
       color: #fff;
-      line-height: 1;
+      line-height: 1.1;
     }
     .stat-label {
       font-size: 0.75rem;
@@ -405,6 +406,22 @@
       color: rgba(13,26,31,0.65);
     }
 
+    /* ── Team ── */
+    .features.team { padding-top: 0; }
+    .features-grid.four { grid-template-columns: repeat(4, 1fr); }
+    .team-note {
+      font-size: 0.92rem; line-height: 1.8;
+      color: rgba(13,26,31,0.7);
+      margin-top: 2.4rem;
+    }
+    .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
+    .team-note a:hover { border-bottom-color: var(--teal); }
+    .team-backing {
+      font-size: 0.78rem; line-height: 1.7;
+      color: rgba(13,26,31,0.6);
+      margin-top: 0.8rem;
+    }
+
     /* ── Contact ── */
     .contact {
       background: var(--faint);
@@ -459,28 +476,8 @@
 
     /* Contact form side */
     .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(13,26,31,0.5);
-    }
-    .form-input, .form-textarea {
-      background: #fff;
-      border: 1px solid rgba(26,107,107,0.2);
-      padding: 0.85rem 1rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      color: var(--ink);
-      transition: border-color 0.2s;
-      outline: none;
-      width: 100%;
-    }
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--teal);
-    }
-    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 0.8rem; line-height: 1.7; color: rgba(13,26,31,0.6); }
+    .form-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
     .form-submit {
       align-self: flex-start;
       margin-top: 0.5rem;
@@ -496,6 +493,14 @@
       justify-content: space-between;
       font-size: 0.78rem;
       letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .footer-legal {
+      flex-basis: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      line-height: 1.7;
     }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--teal2); }
@@ -527,18 +532,25 @@
       100% { top: 90%; opacity: 0; }
     }
 
-    /* Scroll reveal */
-    .reveal {
+    /* Scroll reveal: content is visible without JS; the fade-in only applies when JS runs */
+    .js .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s, transform 0.8s;
+      transform: translateY(12px);
+      transition: opacity 0.5s, transform 0.5s;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .js .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-eyebrow, .hero-title, .hero-divider, .hero-lead, .hero-cta, .hero-data { animation: none; opacity: 1; transform: none; }
+      .ring, .ring-core, .scan-line { animation: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1200px) {
+      .features-grid.four { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
@@ -548,7 +560,7 @@
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .features { padding: 5rem 2rem; }
-      .features-grid { grid-template-columns: 1fr; gap: 2px; }
+      .features-grid, .features-grid.four { grid-template-columns: 1fr; gap: 2px; }
       .contact { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
       section { padding: 5rem 2rem; }
       header { padding: 1.2rem 1.5rem; }
@@ -567,6 +579,7 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
     }
   </style>
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -578,10 +591,11 @@
   </a>
   <nav>
     <a href="#o-nas">About</a>
-    <a href="#diagnostika">Diagnostics</a>
+    <a href="#diagnostika">Focus</a>
+    <a href="#tym">Team</a>
     <a href="#kontakt">Contact</a>
     <a href="index.html" class="nav-aeyes">aEyes</a>
-    <a href="../mri.html" class="lang" hreflang="cs" lang="cs" title="Česky"><svg viewBox="0 0 6 4" aria-hidden="true"><rect width="6" height="2" fill="#fff"/><rect y="2" width="6" height="2" fill="#d7141a"/><path d="M0,0L3,2L0,4z" fill="#11457e"/></svg>CS</a>
+    <a href="../mri.html" class="lang" hreflang="cs" lang="cs" title="Česky">CS</a>
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </header>
@@ -589,13 +603,13 @@
 <!-- ── Hero ── -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <p class="hero-eyebrow">Central Bohemian Region · 2026/2027</p>
+    <p class="hero-eyebrow">Central Bohemian Region · project in preparation</p>
     <h1 class="hero-title">
-      A modern<br><em>MRI centre</em>
+      We are preparing<br><em>an MRI centre</em>
     </h1>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      We are preparing to open a state-of-the-art diagnostic centre. Our goal is to make specialised care more accessible with the latest MR imaging technology.
+      Our aim is to improve access to MRI examinations in the Central Bohemian Region. The project is at the preparation stage and the centre is not yet operating.
     </p>
     <div class="hero-cta">
       <a href="#kontakt" class="btn">
@@ -632,20 +646,16 @@
 <!-- ── Stats ── -->
 <div class="stats reveal">
   <div class="stat">
-    <div class="stat-num">1.5T</div>
-    <div class="stat-label">Field strength</div>
+    <div class="stat-num">1.5 T</div>
+    <div class="stat-label">Planned scanner</div>
   </div>
   <div class="stat">
-    <div class="stat-num">0</div>
-    <div class="stat-label">Ionising radiation</div>
+    <div class="stat-num">Central Bohemia</div>
+    <div class="stat-label">Location</div>
   </div>
   <div class="stat">
-    <div class="stat-num"><a href="index.html" style="color:inherit;text-decoration:none">aEyes</a></div>
-    <div class="stat-label">AI-assisted analysis</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">24/7</div>
-    <div class="stat-label">Online booking</div>
+    <div class="stat-num">In preparation</div>
+    <div class="stat-label">Project status</div>
   </div>
 </div>
 
@@ -660,14 +670,14 @@
   <div class="reveal">
     <div class="about-body">
       <p>
-        We are a multidisciplinary team with deep experience in medicine, software development and artificial intelligence. This combination lets us approach diagnostics in an innovative and efficient way.
+        We are a team with experience in medicine, software development and artificial intelligence. <a href="index.html">aEyes</a>, our AI system for reading MRI, is a separate research project of the company and is not part of healthcare provision.
       </p>
       <div class="about-accent"></div>
       <p>
-        Magnetic resonance imaging is an indispensable tool of modern clinical practice — it enables precise diagnosis without ionising radiation and is key across specialties from neurology and orthopaedics to oncology.
+        Magnetic resonance imaging works without ionising radiation and is used across specialties from neurology and orthopaedics to oncology.
       </p>
       <p>
-        Demand for MRI in the Central Bohemian Region has long exceeded available capacity, which keeps waiting times growing. Our centre aims to close this gap and bring fast, high-quality and technologically advanced diagnostics to the region.
+        Demand for MRI in the Central Bohemian Region has long exceeded available capacity, which keeps waiting times growing. The planned centre is intended to add capacity in the region.
       </p>
     </div>
   </div>
@@ -676,8 +686,8 @@
 <!-- ── Features ── -->
 <section class="features" id="diagnostika">
   <div class="features-header reveal">
-    <p class="section-label">Our focus</p>
-    <h2 class="features-title">Advanced diagnostics<br>for the region</h2>
+    <p class="section-label">Planned focus</p>
+    <h2 class="features-title">What the centre<br>will focus on</h2>
   </div>
   <div class="features-grid">
     <div class="feature-card reveal">
@@ -692,7 +702,7 @@
         </svg>
       </div>
       <h3 class="feature-title">Neurology</h3>
-      <p class="feature-text">Precise imaging of the brain and spine. Diagnosis of multiple sclerosis, stroke, tumours and degenerative diseases of the CNS.</p>
+      <p class="feature-text">We will image the brain and spine, for example in suspected multiple sclerosis, stroke, tumours or degenerative diseases of the CNS.</p>
     </div>
     <div class="feature-card reveal" style="transition-delay:0.15s">
       <div class="feature-icon">
@@ -705,7 +715,7 @@
         </svg>
       </div>
       <h3 class="feature-title">Orthopaedics</h3>
-      <p class="feature-text">Detailed imaging of joints, soft tissues, tendons and ligaments. Key diagnostics before surgery and for monitoring treatment.</p>
+      <p class="feature-text">We will image joints, soft tissues, tendons and ligaments, both before surgery and to follow the course of treatment.</p>
     </div>
     <div class="feature-card reveal" style="transition-delay:0.3s">
       <div class="feature-icon">
@@ -717,9 +727,37 @@
         </svg>
       </div>
       <h3 class="feature-title">Oncology</h3>
-      <p class="feature-text">Imaging and staging of cancer without radiation exposure. Monitoring treatment response with maximum precision.</p>
+      <p class="feature-text">We will image and stage cancer and follow the response to treatment, without ionising radiation.</p>
     </div>
   </div>
+</section>
+
+<!-- ── Team ── -->
+<section class="features team" id="tym">
+  <div class="features-header reveal">
+    <p class="section-label">Team</p>
+    <h2 class="features-title">Who is behind the company</h2>
+  </div>
+  <div class="features-grid four">
+    <div class="feature-card reveal">
+      <h3 class="feature-title">Orthopaedics</h3>
+      <p class="feature-text">An orthopaedic surgeon in clinical practice. Defines what the system should assess and what the output for physicians should look like.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.1s">
+      <h3 class="feature-title">Artificial intelligence</h3>
+      <p class="feature-text">Machine learning and medical image analysis. Model design, training and validation.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.2s">
+      <h3 class="feature-title">Software</h3>
+      <p class="feature-text">Software development and operations, integration with hospital systems (PACS, DICOM).</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.3s">
+      <h3 class="feature-title">Business</h3>
+      <p class="feature-text">Hospital partnerships, funding and grants.</p>
+    </div>
+  </div>
+  <p class="team-note reveal">We will gladly put you in touch with the right member of the team: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-backing reveal">Backing: member of the NVIDIA Inception program · Google for Startups Cloud Program · compute time from the EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
 
 <!-- ── Contact ── -->
@@ -760,24 +798,14 @@
   </div>
 
   <div class="contact-form reveal">
-    <div class="form-group">
-      <label class="form-label" for="name">Full name</label>
-      <input class="form-input" id="name" type="text" placeholder="Your name" />
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="email">Email address</label>
-      <input class="form-input" id="email" type="email" placeholder="you@example.com" />
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="msg">Message</label>
-      <textarea class="form-textarea" id="msg" placeholder="Your question or message..."></textarea>
-    </div>
+    <p class="contact-body">Write to us by email. We will reply to the address you write from.</p>
     <div class="form-submit">
-      <button class="btn" type="button" onclick="handleSubmit()">
-        Send message
+      <a class="btn" href="mailto:info@montesmedica.cz?subject=Website%20enquiry%20MontesMedica">
+        Send an email
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      </a>
     </div>
+    <p class="form-note">How we handle your data: <a href="privacy.html">Privacy policy</a>.</p>
   </div>
 </section>
 
@@ -786,6 +814,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
+  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File <!-- TODO: file number -->. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="index.html">aEyes</a></div>
 </footer>
 
 <script>
@@ -817,20 +846,6 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
-
-  // Form handler (mailto fallback — works without backend)
-  function handleSubmit() {
-    const name  = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg   = document.getElementById('msg').value.trim();
-    if (!name || !email || !msg) {
-      alert('Please fill in all fields.');
-      return;
-    }
-    const subject = encodeURIComponent('Website enquiry — MontesMedica');
-    const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-    window.location.href = `mailto:info@montesmedica.cz?subject=${subject}&body=${body}`;
-  }
 </script>
 </body>
 </html>

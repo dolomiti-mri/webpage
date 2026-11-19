@@ -7,8 +7,9 @@ Statický web MontesMedica s.r.o. Nasazuje se automaticky přes GitHub Pages př
 
 | CS | EN |
 |---|---|
-| `index.html` – aEyes by MontesMedica, AI expertní systémy (úvodní stránka) | `en/index.html` |
-| `mri.html` – MR pracoviště | `en/mri.html` |
+| `index.html` – aEyes by MontesMedica, výzkumný prototyp AI (úvodní stránka) | `en/index.html` |
+| `mri.html` – připravované MR pracoviště | `en/mri.html` |
+| `ochrana-osobnich-udaju.html` – ochrana osobních údajů | `en/privacy.html` |
 | `aeyes.html` – jen přesměrování staré adresy na `/` | `en/aeyes.html` → `/en/` |
 
 Každá stránka má vlastní CSS v `<head>`; společné jsou jen obrázky v `assets/img/` (logo, favikona, OG obrázek).

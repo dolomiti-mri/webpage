@@ -20,4 +20,14 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/mri.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/mri.html"/>
   </url>
+  <url>
+    <loc>https://montesmedica.cz/ochrana-osobnich-udaju.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/ochrana-osobnich-udaju.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://montesmedica.cz/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://montesmedica.cz/ochrana-osobnich-udaju.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://montesmedica.cz/en/privacy.html"/>
+  </url>
 </urlset>
