@@ -7,10 +7,10 @@ Statický web MontesMedica s.r.o. Nasazuje se automaticky přes GitHub Pages př
 
 | CS | EN |
 |---|---|
-| `index.html` – aEyes by MontesMedica, výzkumný prototyp AI (úvodní stránka) | `en/index.html` |
+| `index.html` – úvodní stránka se dvěma dlaždicemi (aEyes, MR pracoviště) | `en/index.html` |
+| `aeyes.html` – aEyes by MontesMedica, výzkumný prototyp AI | `en/aeyes.html` |
 | `mri.html` – připravované MR pracoviště | `en/mri.html` |
 | `ochrana-osobnich-udaju.html` – ochrana osobních údajů | `en/privacy.html` |
-| `aeyes.html` – jen přesměrování staré adresy na `/` | `en/aeyes.html` → `/en/` |
 
 Každá stránka má vlastní CSS v `<head>`; společné jsou obrázky v `assets/img/` (logo, favikona, OG obrázek)
 a písma v `assets/fonts/` (Cormorant Garamond a DM Sans, licence SIL OFL 1.1, načítaná lokálně přes `fonts.css`).

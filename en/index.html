@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aEyes by MontesMedica · research prototype</title>
+  <title>MontesMedica</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="MontesMedica" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://montesmedica.cz/en/" />
-  <meta property="og:title" content="aEyes by MontesMedica – research prototype of an AI second reader for MRI" />
-  <meta property="og:description" content="A research prototype of an AI second reader for knee MRI, focused on sports injuries in children and adolescents. Not a medical device." />
+  <meta property="og:title" content="MontesMedica – aEyes and a planned MRI centre" />
+  <meta property="og:description" content="MontesMedica s.r.o.: aEyes, a research prototype of an AI second reader for knee MRI, and a planned MRI centre in the Central Bohemian Region." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="aEyes by MontesMedica: a research prototype of an AI second reader for knee MRI, focused on sports injuries in children and adolescents. Not a medical device." />
+  <meta name="description" content="MontesMedica s.r.o.: aEyes, a research prototype of an AI second reader for knee MRI, and a planned MRI centre in the Central Bohemian Region." />
 
   <link rel="stylesheet" href="../assets/fonts/fonts.css" />
 
@@ -39,36 +39,24 @@
       --faint:  #e8eeee;
     }
 
-    html { scroll-behavior: smooth; }
-
     body {
-      background: var(--paper);
+      background: var(--ink);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       min-height: 100vh;
-      overflow-x: hidden;
+      display: flex; flex-direction: column;
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
     /* ── Header ── */
     header {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
       padding: 1.4rem 3rem;
       display: flex; align-items: center; justify-content: space-between;
-      background: transparent;
-      transition: background 0.5s, backdrop-filter 0.5s;
-    }
-    header.scrolled {
-      background: rgba(13,26,31,0.88);
-      backdrop-filter: blur(12px);
+      background: var(--ink);
       border-bottom: 1px solid rgba(36,145,143,0.2);
     }
-
-    .logo {
-      display: flex; align-items: center; gap: 0.7rem;
-      text-decoration: none;
-    }
+    .logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
     .logo-mark { height: 30px; width: auto; display: block; }
     .logo-text {
       font-family: 'Cormorant Garamond', serif;
@@ -78,7 +66,6 @@
       color: #fff;
     }
     .logo-text span { color: var(--teal2); }
-
     nav a {
       font-size: 0.82rem;
       letter-spacing: 0.1em;
@@ -86,486 +73,77 @@
       text-decoration: none;
       color: #fff;
       opacity: 0.65;
-      margin-left: 2.2rem;
-      white-space: nowrap;
       transition: opacity 0.2s, color 0.2s;
     }
     nav a:hover { opacity: 1; color: var(--teal2); }
-    nav { display: flex; align-items: center; }
-    nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
-    nav a.nav-mri { opacity: 1; color: var(--teal2); font-weight: 500; }
-    .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: #fff; }
-    .burger svg { width: 22px; height: 22px; display: block; }
 
-    /* ── Hero ── */
-    .hero {
-      min-height: min(92vh, 860px);
-      background: var(--ink);
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 4rem;
-      padding: 10rem 5rem 6rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal2);
-      margin-bottom: 1.6rem;
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.4rem, 7vw, 6.4rem);
-      font-weight: 300;
-      line-height: 1;
-    }
-    .hero-title em { font-style: italic; color: var(--teal2); }
-    .hero-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(255,255,255,0.55);
-      margin-top: 0.6rem;
-    }
-    .hero-divider {
-      width: 48px; height: 2px;
-      background: var(--gold);
-      margin: 2.2rem 0;
-    }
-    .hero-lead {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      max-width: 480px;
-      color: rgba(255,255,255,0.75);
-    }
-    .hero-pills {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
-      margin-top: 2.4rem;
-    }
-    .pill {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.45rem 0.9rem;
-      border: 1px solid rgba(36,145,143,0.45);
-      color: rgba(255,255,255,0.8);
-    }
-    .pill.now { background: var(--teal); border-color: var(--teal); color: #fff; }
-    .hero-lead a { color: var(--teal2); text-decoration: none; border-bottom: 1px solid rgba(36,145,143,0.5); }
-    .hero-lead a:hover { border-bottom-color: var(--teal2); }
-    .hero .note { max-width: 480px; }
-
-    /* Knee "scan" visual */
-    .scan {
-      position: relative;
-      aspect-ratio: 1;
-      max-width: 440px;
-      width: 100%;
-      justify-self: center;
-      border: 1px solid rgba(36,145,143,0.25);
-      background: radial-gradient(circle at 50% 50%, rgba(36,145,143,0.14), transparent 70%);
-      overflow: hidden;
-    }
-    .scan svg { width: 100%; height: 100%; display: block; }
-    .scan-line {
-      position: absolute; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(36,145,143,0.8), transparent);
-      animation: scan 4s ease-in-out infinite;
-    }
-    .scan-tag {
-      position: absolute;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal2);
-    }
-    .scan-tag.tl { top: 1rem; left: 1rem; }
-    .scan-tag.br { bottom: 1rem; right: 1rem; text-align: right; color: rgba(255,255,255,0.5); }
-
-    /* ── Sections ── */
-    section { padding: 7rem 5rem; }
-
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
-      line-height: 1.2;
-      max-width: 720px;
-    }
-    .section-title em { font-style: italic; color: var(--teal); }
-    .section-lead {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: rgba(13,26,31,0.7);
-      max-width: 640px;
-      margin-top: 1.4rem;
-    }
-
-    /* ── Principles strip ── */
-    .stats {
-      background: var(--teal);
-      padding: 4rem 5rem;
-      display: flex;
-    }
-    .stat {
+    /* ── Two tiles ── */
+    main {
       flex: 1;
-      padding: 0 3rem;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
-    .stat:first-child { padding-left: 0; }
-    .stat:last-child { border-right: none; }
-    .stat-num {
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: #fff;
-      line-height: 1.2;
-    }
-    .stat-label {
-      font-size: 0.8rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.72);
-      margin-top: 0.7rem;
-    }
-
-    /* ── Why knee ── */
-    .cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-top: 4rem;
+      grid-template-columns: 1fr 1fr;
     }
-    .card {
-      background: #fff;
-      padding: 2.8rem 2.4rem;
+    .tile {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem;
+      text-decoration: none;
       position: relative;
-      transition: transform 0.3s;
+      overflow: hidden;
     }
-    .card:hover { transform: translateY(-4px); }
-    .card::before {
+    .tile::before {
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--teal);
+      background: var(--gold);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s;
     }
-    .card:hover::before { transform: scaleX(1); }
-    .card-kicker {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
+    .tile:hover::before, .tile:focus-visible::before { transform: scaleX(1); }
+    .tile-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.9rem;
+      margin-bottom: 1.6rem;
     }
-    .card-title {
-      font-size: 1.1rem;
-      font-weight: 500;
-      line-height: 1.35;
-      margin-bottom: 0.9rem;
-    }
-    .card-text {
-      font-size: 0.88rem;
-      line-height: 1.75;
-      color: rgba(13,26,31,0.65);
-    }
-    .card-text a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
-    .card-text a:hover { border-bottom-color: var(--teal); }
-    .source {
-      font-size: 0.74rem;
-      color: rgba(13,26,31,0.45);
-      margin-top: 1.6rem;
-    }
-
-    .validation { padding-top: 0; }
-    .validation .section-lead { margin-top: 0; }
-
-    /* ── Pipeline ── */
-    .pipeline { background: var(--faint); }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      margin-top: 4rem;
-      counter-reset: step;
-    }
-    .step {
-      padding: 0 1.6rem 0 0;
-      position: relative;
-    }
-    .step-num {
-      font-size: 1.6rem;
+    .tile-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
       font-weight: 300;
-      color: var(--teal);
-      line-height: 1;
+      line-height: 1.1;
     }
-    .step-bar {
-      height: 1px;
-      background: rgba(26,107,107,0.35);
-      margin: 1rem 0 1.4rem;
-      position: relative;
-    }
-    .step-bar::after {
-      content: '';
-      position: absolute; left: 0; top: -3px;
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--teal);
-    }
-    .step-title {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.6rem;
-    }
-    .step-text {
-      font-size: 0.84rem;
-      line-height: 1.7;
-      color: rgba(13,26,31,0.65);
-    }
-
-    /* ── Suite ── */
-    .suite { background: var(--ink); color: #fff; }
-    .suite .section-label { color: var(--teal2); }
-    .suite .section-title em { color: var(--teal2); }
-    .suite .section-lead { color: rgba(255,255,255,0.65); }
-    .modules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.1);
-      margin-top: 4rem;
-    }
-    .module {
-      background: var(--ink);
-      padding: 2.6rem 2.2rem;
-    }
-    .module.current { background: #10282b; }
-    .module.wide { grid-column: 1 / -1; }
-    .module-when {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .module.current .module-when { color: var(--teal2); }
-    .module-name {
-      font-size: 1.35rem;
-      font-weight: 500;
-      margin: 0.6rem 0 0.9rem;
-    }
-    .module-name span { color: var(--teal2); }
-    .module-text {
-      font-size: 0.86rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.62);
-    }
-
-    /* ── Roadmap ── */
-    .roadmap-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      margin-top: 4rem;
-    }
-    .phase {
-      background: #fff;
-      padding: 2.4rem 2rem;
-      border-top: 3px solid var(--mist);
-    }
-    .phase.current { border-top-color: var(--teal); }
-    .phase-when {
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--teal);
-    }
-    .phase-title {
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin: 0.4rem 0 1.2rem;
-    }
-    .phase ul { list-style: none; }
-    .phase li {
-      font-size: 0.86rem;
-      line-height: 1.6;
-      color: rgba(13,26,31,0.68);
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.5rem;
-    }
-    .phase-status {
-      float: right;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.6rem;
-      border: 1px solid var(--mist);
-      color: var(--teal);
-    }
-    .phase.current .phase-status { background: var(--teal); border-color: var(--teal); color: #fff; }
-    .phase li::before {
-      content: '';
-      position: absolute; left: 0; top: 0.6em;
-      width: 5px; height: 1px;
-      background: var(--gold);
-    }
-
-
-    /* ── Demo ── */
-    .demo { background: #fff; }
-    .demo-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
-      margin-top: 4rem;
-      align-items: start;
-    }
-    .viewer {
-      background: var(--ink);
-      color: #fff;
-      padding: 1.6rem 1.8rem 1.8rem;
-      border: 1px solid rgba(36,145,143,0.25);
-    }
-    .viewer-head {
-      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-      font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--teal2);
-      margin-bottom: 1.5rem;
-    }
-    .viewer-head span:last-child { color: var(--gold); }
-    .plane { margin-bottom: 1.1rem; }
-    .plane-name {
-      display: flex; justify-content: space-between;
-      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 0.45rem;
-    }
-    .plane-name b { font-weight: 400; color: var(--teal2); }
-    .slices { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; }
-    .slices i {
-      display: block; aspect-ratio: 1;
-      background: rgba(36,145,143,0.1);
-      border: 1px solid rgba(36,145,143,0.22);
-    }
-    .slices i.w1 { background: rgba(36,145,143,0.38); }
-    .slices i.w2 { background: rgba(36,145,143,0.75); }
-    .slices i.w3 { background: var(--gold); border-color: var(--gold); }
-    .probs {
-      margin-top: 1.6rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.4rem;
-    }
-    .prob {
-      display: grid; grid-template-columns: minmax(9rem, 1fr) 2fr auto;
-      gap: 1rem; align-items: center;
-      font-size: 0.82rem;
-      margin-bottom: 0.75rem;
-    }
-    .prob-bar { height: 6px; background: rgba(255,255,255,0.08); }
-    .prob-bar i { display: block; height: 100%; background: var(--teal2); }
-    .prob.high .prob-bar i { background: var(--gold); }
-    .prob-val { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.8); min-width: 3.5ch; text-align: right; }
-    .viewer-legend {
-      display: flex; gap: 1.2rem; flex-wrap: wrap;
-      margin-top: 1.2rem;
-      font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
-    .viewer-legend i { display: inline-block; width: 9px; height: 9px; margin-right: 0.4rem; vertical-align: -1px; }
-    .report {
-      background: var(--faint);
-      padding: 2rem 2.2rem;
-      font-size: 0.88rem; line-height: 1.75;
-    }
-    .report h3 {
-      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); font-weight: 400;
-      margin-bottom: 1.1rem;
-    }
-    .report dl { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1.2rem; }
-    .report dt { color: rgba(13,26,31,0.55); }
-    .report dd { font-weight: 400; }
-    .report p { margin-top: 1.2rem; color: rgba(13,26,31,0.68); font-size: 0.84rem; }
-    .demo-note {
-      font-size: 0.76rem; line-height: 1.7;
-      color: rgba(13,26,31,0.55);
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      margin-top: 1.6rem;
-    }
-    .demo-cta { margin-top: 2.6rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; }
-    .btn.teal { background: var(--teal); }
-    .btn.teal:hover { background: var(--teal2); }
-    .demo-cta small { font-size: 0.82rem; line-height: 1.6; color: rgba(13,26,31,0.6); max-width: 360px; }
-
-    /* ── Team ── */
-    .team { background: var(--faint); }
-    .team .stats { margin-top: 4rem; padding: 3rem 2.4rem; }
-    .team .stat { padding: 0 2rem; }
-    .team .stat:first-child { padding-left: 0; }
-    .team-note {
-      font-size: 0.92rem; line-height: 1.8;
-      color: rgba(13,26,31,0.7);
-      margin-top: 2.4rem;
-    }
-    .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
-    .team-note a:hover { border-bottom-color: var(--teal); }
-    .team-backing {
-      font-size: 0.78rem; line-height: 1.7;
-      color: rgba(13,26,31,0.6);
-      margin-top: 0.8rem;
-    }
-
-    /* ── Disclaimer / CTA ── */
-    .cta {
-      background: var(--teal);
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .cta .section-label { color: rgba(255,255,255,0.6); }
-    .cta .section-title { color: #fff; }
-    .cta p {
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.8);
-      margin-top: 1.2rem;
-    }
+    .tile-title em { font-style: italic; }
+    .tile-divider { width: 48px; height: 2px; background: var(--gold); margin: 2.2rem 0; }
+    .tile-lead { font-size: 1.05rem; line-height: 1.75; max-width: 420px; }
     .btn {
       display: inline-flex; align-items: center; gap: 0.6rem;
+      align-self: flex-start;
+      margin-top: 3rem;
       padding: 0.85rem 2rem;
-      background: var(--ink);
+      background: var(--teal);
       color: #fff;
       font-size: 0.84rem;
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
       transition: background 0.25s, transform 0.25s;
     }
-    .btn:hover { background: #1c3238; transform: translateY(-1px); }
+    .tile:hover .btn { background: var(--teal2); transform: translateY(-1px); }
     .btn svg { width: 16px; height: 16px; }
-    .note {
-      font-size: 0.76rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.6);
-      border-left: 2px solid var(--gold);
-      padding-left: 1rem;
-      margin-top: 2rem;
+
+    .tile.aeyes {
+      background: radial-gradient(circle at 70% 40%, rgba(36,145,143,0.14), transparent 65%), var(--ink);
+      color: #fff;
     }
+    .tile.aeyes .tile-eyebrow, .tile.aeyes .tile-title em { color: var(--teal2); }
+    .tile.aeyes .tile-lead { color: rgba(255,255,255,0.75); }
+
+    .tile.mri {
+      background: linear-gradient(135deg, var(--mist) 0%, var(--faint) 50%, var(--mist) 100%);
+      color: var(--ink);
+    }
+    .tile.mri .tile-eyebrow, .tile.mri .tile-title em { color: var(--teal); }
+    .tile.mri .tile-lead { color: rgba(13,26,31,0.78); }
 
     /* ── Footer ── */
     footer {
@@ -597,440 +175,64 @@
     }
     .footer-logo span { color: var(--teal2); }
 
-    /* ── Animations ── */
-    @keyframes scan {
-      0% { top: 8%; opacity: 0; }
-      20% { opacity: 1; }
-      80% { opacity: 1; }
-      100% { top: 92%; opacity: 0; }
-    }
-    @keyframes glow {
-      0%, 100% { opacity: 0.35; }
-      50% { opacity: 0.9; }
-    }
-    .hot { animation: glow 3s ease-in-out infinite; }
-
-    /* Content is visible without JS; the fade-in only applies when JS runs */
-    .js .reveal {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s, transform 0.5s;
-    }
-    .js .reveal.visible { opacity: 1; transform: none; }
-
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .scan-line, .hot { animation: none; }
-      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .tile::before, .btn { transition: none; }
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 1100px) {
-      .steps { grid-template-columns: 1fr; gap: 2.4rem; }
-      .step { padding: 0; }
-      .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 1340px) {
-      nav { margin-left: 1rem; }
-      nav a { display: none; white-space: nowrap; }
-      nav a.nav-mri { display: inline; margin-left: 0; }
-      nav a.lang { display: inline-flex; margin-left: 1rem; }
-      .burger { display: block; }
-      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(13,26,31,0.97); backdrop-filter: blur(12px); margin: 0; }
-      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
-    }
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 8rem 1rem 4rem; gap: 3rem; min-height: auto; }
-      .scan { max-width: 320px; }
-      section { padding: 5rem 1rem; }
-      .stats { flex-direction: column; gap: 2rem; padding: 3rem 1rem; }
-      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
-      .team .stats { padding: 2.4rem 1.6rem; }
-      .team .stat { padding: 0 0 2rem; }
-      .stat:last-child { border-bottom: none; }
-      .cards, .modules, .roadmap-grid { grid-template-columns: 1fr; }
-      .module.wide { grid-column: auto; }
-      .cta { grid-template-columns: 1fr; gap: 2rem; }
-      .demo-grid { grid-template-columns: 1fr; }
-      .people, .people.two { grid-template-columns: 1fr; }
       header { padding: 1.2rem 1rem; }
       .logo { gap: 0.5rem; }
       .logo-mark { height: 20px; }
       .logo-text { font-size: 1.05rem; }
-    }
-    @media (max-width: 480px) {
-      .logo-text { display: none; }
+      main { grid-template-columns: 1fr; }
+      .tile { padding: 4rem 1rem; }
+      .tile-title { font-size: clamp(2.4rem, 11vw, 3.4rem); }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1rem; }
     }
   </style>
-  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- ── Header ── -->
-<header id="header">
-  <a href="#" class="logo">
+<header>
+  <a href="index.html" class="logo">
     <img class="logo-mark" src="../assets/img/logo-mountain-light.png" alt="" width="130" height="30" />
     <span class="logo-text">Montes<span>Medica</span></span>
   </a>
   <nav>
-    <a href="#koleno">Knee</a>
-    <a href="#jak-to-funguje">How it works</a>
-    <a href="#demo">Demo</a>
-    <a href="#moduly">Modules</a>
-    <a href="#plan">Roadmap</a>
-    <a href="#tym">Expertise</a>
-    <a href="#spoluprace">Partnership</a>
-    <a href="mri.html" class="nav-mri">MRI centre</a>
-    <a href="../index.html" class="lang" hreflang="cs" lang="cs" title="Česky">CS</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <a href="../index.html" hreflang="cs" lang="cs" title="Česky">CS</a>
   </nav>
 </header>
 
-<!-- ── Hero ── -->
-<section class="hero" id="home">
-  <div>
-    <p class="hero-eyebrow">AI expert systems for radiology · Prague</p>
-    <h1 class="hero-title"><em>a</em>Eyes</h1>
-    <p class="hero-sub">by MontesMedica</p>
-    <div class="hero-divider"></div>
-    <p class="hero-lead">
-      AI expert systems for MRI. Each module is a specialised second reader for one body region. The first module reads knee MRI: abnormal finding, anterior cruciate ligament tear and meniscal tear. Our focus is sports injuries in children and adolescents. aEyes is a project of MontesMedica s.r.o., which is also preparing an <a href="mri.html">MRI centre</a>.
-    </p>
-    <div class="hero-pills">
-      <span class="pill now">Knee MRI · working prototype</span>
-      <span class="pill">Spine MRI · planned</span>
-    </div>
-    <p class="note">Research prototype. Not a medical device and not intended for clinical use.</p>
-  </div>
+<main>
+  <h1 class="sr-only">MontesMedica</h1>
+  <a class="tile aeyes" href="aeyes.html">
+    <p class="tile-eyebrow">AI expert systems for radiology</p>
+    <h2 class="tile-title"><em>a</em>Eyes</h2>
+    <div class="tile-divider"></div>
+    <p class="tile-lead">A research prototype of an AI second reader for knee MRI.</p>
+    <span class="btn">
+      Go to aEyes
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+  </a>
+  <a class="tile mri" href="mri.html">
+    <p class="tile-eyebrow">Project in preparation</p>
+    <h2 class="tile-title">MRI <em>centre</em></h2>
+    <div class="tile-divider"></div>
+    <p class="tile-lead">We are preparing an MRI centre in the Central Bohemian Region.</p>
+    <span class="btn">
+      Go to the MRI centre
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+  </a>
+</main>
 
-  <div class="scan" aria-hidden="true">
-    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- stylised sagittal knee -->
-      <g stroke="#24918f" stroke-width="1.2" opacity="0.8">
-        <path d="M150 20 C150 110 140 150 150 185 C160 215 240 215 250 185 C262 150 250 110 250 20"/>
-        <path d="M145 380 C150 300 140 262 150 238 C165 215 235 215 250 238 C262 262 250 300 255 380"/>
-        <ellipse cx="275" cy="175" rx="16" ry="30" opacity="0.7"/>
-        <path d="M160 222 Q200 212 240 222" stroke-dasharray="4 3"/>
-      </g>
-      <!-- ACL -->
-      <path d="M180 200 L222 236" stroke="#b8893a" stroke-width="2.2" class="hot"/>
-      <!-- menisci -->
-      <path d="M156 226 L176 222 L172 232 Z" fill="#24918f" opacity="0.6"/>
-      <path d="M224 222 L244 226 L228 232 Z" fill="#24918f" opacity="0.6"/>
-      <!-- attention box -->
-      <rect x="160" y="185" width="80" height="62" stroke="#b8893a" stroke-width="1" stroke-dasharray="5 4"/>
-      <!-- grid ticks -->
-      <g stroke="rgba(255,255,255,0.15)">
-        <line x1="0" y1="100" x2="12" y2="100"/><line x1="0" y1="200" x2="12" y2="200"/><line x1="0" y1="300" x2="12" y2="300"/>
-        <line x1="100" y1="400" x2="100" y2="388"/><line x1="200" y1="400" x2="200" y2="388"/><line x1="300" y1="400" x2="300" y2="388"/>
-      </g>
-    </svg>
-    <div class="scan-line"></div>
-    <div class="scan-tag tl">SAG · PD · 1.5T</div>
-    <div class="scan-tag br">P(ACL tear)<br>highlighted slices</div>
-  </div>
-</section>
-
-<!-- ── Principles ── -->
-<div class="stats reveal">
-  <div class="stat">
-    <div class="stat-num">Second reader</div>
-    <div class="stat-label">Supports the radiologist's decision, never replaces it. The physician always makes the final call.</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">On-site by design</div>
-    <div class="stat-label">Designed to run on a single GPU workstation inside the hospital. Images do not leave the site during analysis.</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Reasons shown</div>
-    <div class="stat-label">For every finding, it shows the slices that led to it.</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">EU MDR</div>
-    <div class="stat-label">We are developing towards certification under the EU MDR; the target class is IIa.</div>
-  </div>
-</div>
-
-<!-- ── Why knee ── -->
-<section id="koleno">
-  <div class="reveal">
-    <p class="section-label">First module · aEyes-knee</p>
-    <h2 class="section-title">Knee MRI: more scans every year,<br><em>and reporting can't keep up</em></h2>
-  </div>
-  <div class="cards">
-    <div class="card reveal">
-      <p class="card-kicker">Volume</p>
-      <h3 class="card-title">Three planes, dozens of slices in every study</h3>
-      <p class="card-text">Knee MRI is among the most frequent MRI examinations. Scanner numbers keep growing; radiologist numbers do not grow with them.</p>
-    </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Decisions</p>
-      <h3 class="card-title">Two findings decide what happens next</h3>
-      <p class="card-text">An ACL tear and a meniscal tear decide between conservative treatment and surgery. From the literature: in the Stanford MRNet reader study, model assistance raised clinicians' specificity for ACL tears by 4.8 percentage points: fewer false positives in patients without a tear.</p>
-    </div>
-  </div>
-  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes)</p>
-</section>
-
-<!-- ── Validation status ── -->
-<section class="validation" id="validace">
-  <div class="reveal">
-    <p class="section-label">Validation status</p>
-    <p class="section-lead">The prototype has been validated on public data from adult patients (MRNet). Whether it carries over to children's and adolescents' knees is a hypothesis that we will test on data from partner hospitals.</p>
-    <!-- TODO: our own metrics and methodology -->
-  </div>
-</section>
-
-<!-- ── Pipeline ── -->
-<section class="pipeline" id="jak-to-funguje">
-  <div class="reveal">
-    <p class="section-label">How it works</p>
-    <h2 class="section-title">From images<br><em>to a second read</em></h2>
-  </div>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">01</div><div class="step-bar"></div>
-      <h3 class="step-title">Knee MRI study</h3>
-      <p class="step-text">A standard examination in three planes (sagittal, coronal, axial), as DICOM straight from PACS.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.1s">
-      <div class="step-num">02</div><div class="step-bar"></div>
-      <h3 class="step-title">Every slice</h3>
-      <p class="step-text">A neural network processes each slice together with its neighbouring slices.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.2s">
-      <div class="step-num">03</div><div class="step-bar"></div>
-      <h3 class="step-title">The whole series</h3>
-      <p class="step-text">The model learns which slices matter and weights them accordingly. Those are the slices it later shows the radiologist.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.3s">
-      <div class="step-num">04</div><div class="step-bar"></div>
-      <h3 class="step-title">Three planes together</h3>
-      <p class="step-text">Results from all planes are combined into three probabilities: abnormal finding, ACL tear, meniscal tear.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.4s">
-      <div class="step-num">05</div><div class="step-bar"></div>
-      <h3 class="step-title">Second read</h3>
-      <p class="step-text">Probabilities, highlighted slices and a structured report go back into the tools the radiologist already reports in.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Demo ── -->
-<section class="demo" id="demo">
-  <div class="reveal">
-    <p class="section-label">Demo</p>
-    <h2 class="section-title">What the radiologist <em>sees</em></h2>
-    <p class="section-lead">The aEyes-knee output for one study: a probability for each of the three findings, the slices that led to them, and a draft structured report. We are not allowed to publish images from the development dataset, so the output is drawn, not photographed. We show the real model run in an online meeting.</p>
-  </div>
-  <div class="demo-grid">
-    <div class="viewer reveal" aria-label="Illustration · not patient data">
-      <div class="viewer-head"><span>aEyes-knee · second reading</span><span>Illustration · not patient data</span></div>
-      <div class="plane">
-        <div class="plane-name"><span>Sagittal · PD · 24 slices</span><b>slices 11–14</b></div>
-        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i class="w1"></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w2"></i><i class="w3"></i><i class="w3"></i><i class="w3"></i><i class="w3"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i class="w1"></i><i></i><i></i><i></i><i></i></div>
-      </div>
-      <div class="plane">
-        <div class="plane-name"><span>Coronal · T2 FS · 24 slices</span><b>slices 9–10</b></div>
-        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w3"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i></i><i></i><i class="w1"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-      <div class="plane">
-        <div class="plane-name"><span>Axial · T2 FS · 24 slices</span><b>slices 10–11</b></div>
-        <div class="slices" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i class="w2"></i><i class="w2"></i><i class="w1"></i><i class="w1"></i><i class="w1"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </div>
-      <div class="probs">
-        <div class="prob high"><span>Abnormal finding</span><div class="prob-bar"><i style="width:91%"></i></div><span class="prob-val">0.91</span></div>
-        <div class="prob high"><span>ACL tear</span><div class="prob-bar"><i style="width:87%"></i></div><span class="prob-val">0.87</span></div>
-        <div class="prob"><span>Meniscal tear</span><div class="prob-bar"><i style="width:24%"></i></div><span class="prob-val">0.24</span></div>
-      </div>
-      <div class="viewer-legend">
-        <span><i style="background:rgba(36,145,143,0.75)"></i>Slice weight for the finding</span>
-        <span><i style="background:#b8893a"></i>Highest weight</span>
-        <span>Illustrative values</span>
-      </div>
-    </div>
-    <div class="reveal" style="transition-delay:0.15s">
-      <div class="report">
-        <h3>Draft structured report</h3>
-        <dl>
-          <dt>Study</dt><dd>Knee MRI, 3 planes</dd>
-          <dt>Abnormal finding</dt><dd>likely (0.91)</dd>
-          <dt>Anterior cruciate ligament</dt><dd>tear likely (0.87), sagittal slices 11–14</dd>
-          <dt>Meniscus</dt><dd>tear unlikely (0.24)</dd>
-          <dt>To verify</dt><dd>SAG 11–14, COR 9–10</dd>
-        </dl>
-        <p>The report is a draft. The radiologist confirms, edits or rejects it in the reading room; the conclusion is always theirs.</p>
-      </div>
-      <p class="demo-note">An illustration of the output, not a model result or patient data. aEyes is not a certified medical device and is not intended for clinical use.</p>
-    </div>
-  </div>
-  <div class="demo-cta reveal">
-    <a href="mailto:info@montesmedica.cz?subject=aEyes%20demo" class="btn teal">
-      Book a live demo · 30 min
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <small>Online meeting. We run the model on studies from a public dataset: DICOM in, highlighted slices, report out.</small>
-  </div>
-</section>
-
-<!-- ── Suite ── -->
-<section class="suite" id="moduly">
-  <div class="reveal">
-    <p class="section-label">The aEyes suite</p>
-    <h2 class="section-title">One expert system<br><em>per organ</em></h2>
-    <p class="section-lead">Every module stands on one platform: connection to PACS and the DICOM viewer, computation on the workstation, operational monitoring and an MDR quality system. Each new module reuses everything already built.</p>
-  </div>
-  <div class="modules">
-    <div class="module current reveal">
-      <p class="module-when">Working prototype · knee MRI</p>
-      <h3 class="module-name">aEyes-<span>knee</span></h3>
-      <p class="module-text">Abnormal finding, ACL tear, meniscal tear. The first module and the regulatory template for all that follow.</p>
-    </div>
-    <div class="module reveal" style="transition-delay:0.1s">
-      <p class="module-when">Planned · spine MRI</p>
-      <h3 class="module-name">aEyes-<span>spine</span></h3>
-      <p class="module-text">Lumbar spine. Same platform, same hospital installation, new module.</p>
-    </div>
-    <div class="module wide reveal">
-      <p class="module-when">Shared platform</p>
-      <h3 class="module-name">One <span>platform</span></h3>
-      <p class="module-text">From model training to the reading room. It plugs easily into the tools a department already uses: PACS, RIS, DICOM viewer. One GPU workstation per site, no patient data in the cloud during operation. The platform is also designed for other imaging modalities.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Roadmap ── -->
-<section id="plan">
-  <div class="reveal">
-    <p class="section-label">Roadmap</p>
-    <h2 class="section-title">Demo, pilot, <em>CE mark</em></h2>
-    <p class="section-lead">On public data we show that the model reaches published results. The certified device is then trained on prospectively labelled studies from partner hospitals.</p>
-  </div>
-  <div class="roadmap-grid">
-    <div class="phase current reveal">
-      <span class="phase-status">in progress</span>
-      <div class="phase-when">Q4 2026</div>
-      <p class="phase-title">Proof of concept</p>
-      <ul>
-        <li>Accuracy on par with published results on the MRNet dataset</li>
-        <li>External validation on independent data</li>
-        <li>Demo running on a single GPU</li>
-      </ul>
-    </div>
-    <div class="phase reveal" style="transition-delay:0.1s">
-      <span class="phase-status">target</span>
-      <div class="phase-when">H1 2027</div>
-      <p class="phase-title">Clinical pilot</p>
-      <ul>
-        <li>Installation at the pilot site</li>
-        <li>Reader study at a partner hospital</li>
-        <li>Data agreements</li>
-      </ul>
-    </div>
-    <div class="phase reveal" style="transition-delay:0.2s">
-      <span class="phase-status">target</span>
-      <div class="phase-when">H2 2027</div>
-      <p class="phase-title">MDR Class IIa</p>
-      <ul>
-        <li>ISO 13485 quality management system</li>
-        <li>Technical documentation and clinical evaluation</li>
-        <li>Spine module proof of concept</li>
-      </ul>
-    </div>
-    <div class="phase reveal" style="transition-delay:0.3s">
-      <span class="phase-status">target</span>
-      <div class="phase-when">2028</div>
-      <p class="phase-title">CE mark</p>
-      <ul>
-        <li>CE marking for aEyes-knee</li>
-        <li>First deployments in Czechia</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ── Team ── -->
-<section class="team" id="tym">
-  <div class="reveal">
-    <p class="section-label">Expertise</p>
-    <h2 class="section-title">Four disciplines, one team</h2>
-  </div>
-  <div class="stats reveal">
-    <div class="stat">
-      <div class="stat-num">Clinical orthopaedics</div>
-      <div class="stat-label">The clinical practice of an orthopaedic surgeon. It determines which findings the system assesses and what the output for physicians should look like.</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Artificial intelligence</div>
-      <div class="stat-label">Machine learning and medical image analysis: model design, training and validation.</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Software</div>
-      <div class="stat-label">Software development and operations, integration with hospital systems (PACS, DICOM).</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Business</div>
-      <div class="stat-label">Hospital partnerships, funding and grants.</div>
-    </div>
-  </div>
-  <p class="team-note reveal">We will be glad to introduce the team in person: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
-  <p class="team-backing reveal">Backing: member of the NVIDIA Inception program · Google for Startups Cloud Program · compute time from the EuroHPC AI Factory (MareNostrum 5)</p>
-</section>
-
-<!-- ── CTA ── -->
-<section class="cta" id="spoluprace">
-  <div class="reveal">
-    <p class="section-label">Partnership</p>
-    <h2 class="section-title">We are looking for partner hospitals, radiologists and investors</h2>
-    <p>If you are interested in a pilot deployment, a reader study or a data partnership, get in touch.</p>
-    <p class="note">aEyes is under development and is not yet a certified medical device. It is not intended for clinical use.</p>
-  </div>
-  <div class="reveal">
-    <a href="mailto:info@montesmedica.cz?subject=aEyes" class="btn">
-      info@montesmedica.cz
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ── Footer ── -->
 <footer>
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
-  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File 437016. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="mri.html">MRI centre</a></div>
+  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File 437016. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a></div>
 </footer>
 
-<script>
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // Mobile menu
-  const nav = document.querySelector('nav');
-  function toggleNav(btn) {
-    const open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  }
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    nav.querySelector('.burger').setAttribute('aria-expanded', 'false');
-  }));
-
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  reveals.forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
