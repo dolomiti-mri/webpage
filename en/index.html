@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aEyes by MontesMedica</title>
+  <title>aEyes by MontesMedica · research prototype</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="MontesMedica" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://montesmedica.cz/en/" />
-  <meta property="og:title" content="aEyes by MontesMedica – AI second reader for MRI" />
-  <meta property="og:description" content="AI expert systems for MRI. First module: a second reader for knee MRI, focused on sports injuries in children and adolescents." />
+  <meta property="og:title" content="aEyes by MontesMedica – research prototype of an AI second reader for MRI" />
+  <meta property="og:description" content="A research prototype of an AI second reader for knee MRI, focused on sports injuries in children and adolescents. Not a medical device." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="aEyes by MontesMedica: AI expert systems for MRI. First module: a second reader for knee MRI, focused on sports injuries in children and adolescents." />
+  <meta name="description" content="aEyes by MontesMedica: a research prototype of an AI second reader for knee MRI, focused on sports injuries in children and adolescents. Not a medical device." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -89,12 +89,12 @@
       color: #fff;
       opacity: 0.65;
       margin-left: 2.2rem;
+      white-space: nowrap;
       transition: opacity 0.2s, color 0.2s;
     }
     nav a:hover { opacity: 1; color: var(--teal2); }
     nav { display: flex; align-items: center; }
     nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
-    nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
     nav a.nav-mri { opacity: 1; color: var(--teal2); font-weight: 500; }
     .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: #fff; }
     .burger svg { width: 22px; height: 22px; display: block; }
@@ -158,6 +158,9 @@
       color: rgba(255,255,255,0.8);
     }
     .pill.now { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .hero-lead a { color: var(--teal2); text-decoration: none; border-bottom: 1px solid rgba(36,145,143,0.5); }
+    .hero-lead a:hover { border-bottom-color: var(--teal2); }
+    .hero .note { max-width: 480px; }
 
     /* Knee "scan" visual */
     .scan {
@@ -288,6 +291,9 @@
       margin-top: 1.6rem;
     }
 
+    .validation { padding-top: 0; }
+    .validation .section-lead { margin-top: 0; }
+
     /* ── Pipeline ── */
     .pipeline { background: var(--faint); }
     .steps {
@@ -336,7 +342,7 @@
     .suite .section-lead { color: rgba(255,255,255,0.65); }
     .modules {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.1);
@@ -400,6 +406,7 @@
       position: relative;
       margin-bottom: 0.5rem;
     }
+    .phase li b { font-weight: 500; color: var(--teal); }
     .phase li::before {
       content: '';
       position: absolute; left: 0; top: 0.6em;
@@ -497,28 +504,17 @@
 
     /* ── Team ── */
     .team { background: var(--faint); }
-    .team-group {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--teal);
-      margin: 3.5rem 0 1rem;
+    .team-note {
+      font-size: 0.92rem; line-height: 1.8;
+      color: rgba(13,26,31,0.7);
+      margin-top: 2.4rem;
     }
-    .team-group:first-of-type { margin-top: 4rem; }
-    .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .people.two { grid-template-columns: repeat(2, 1fr); }
-    .person { background: #fff; padding: 2.4rem 2.2rem; }
-    .avatar {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--mist); color: var(--teal);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em;
-      margin-bottom: 1.4rem;
-    }
-    .person-name { font-size: 1.1rem; font-weight: 500; }
-    .person-role {
-      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold);
-      margin: 0.4rem 0 0.9rem;
+    .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
+    .team-note a:hover { border-bottom-color: var(--teal); }
+    .team-backing {
+      font-size: 0.78rem; line-height: 1.7;
+      color: rgba(13,26,31,0.6);
+      margin-top: 0.8rem;
     }
 
     /* ── Disclaimer / CTA ── */
@@ -571,6 +567,14 @@
       justify-content: space-between;
       font-size: 0.78rem;
       letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .footer-legal {
+      flex-basis: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      line-height: 1.7;
     }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--teal2); }
@@ -596,16 +600,18 @@
     }
     .hot { animation: glow 3s ease-in-out infinite; }
 
-    .reveal {
+    /* Content is visible without JS; the fade-in only applies when JS runs */
+    .js .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s, transform 0.8s;
+      transform: translateY(12px);
+      transition: opacity 0.5s, transform 0.5s;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .js .reveal.visible { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       .scan-line, .hot { animation: none; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
@@ -613,6 +619,17 @@
       .steps { grid-template-columns: 1fr; gap: 2.4rem; }
       .step { padding: 0; }
       .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 1340px) {
+      nav { margin-left: 1rem; }
+      nav a { display: none; white-space: nowrap; }
+      nav a.nav-mri { display: inline; margin-left: 0; }
+      nav a.lang { display: inline-flex; margin-left: 1rem; }
+      .burger { display: block; }
+      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(13,26,31,0.97); backdrop-filter: blur(12px); margin: 0; }
+      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
     }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding: 8rem 1rem 4rem; gap: 3rem; min-height: auto; }
@@ -627,15 +644,6 @@
       .demo-grid { grid-template-columns: 1fr; }
       .people, .people.two { grid-template-columns: 1fr; }
       header { padding: 1.2rem 1rem; }
-      nav { margin-left: 1rem; }
-      nav a { display: none; white-space: nowrap; }
-      nav a.nav-mri { display: inline; margin-left: 0; }
-      nav a.lang { display: inline-flex; margin-left: 1rem; }
-      .burger { display: block; }
-      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(13,26,31,0.97); backdrop-filter: blur(12px); margin: 0; }
-      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
       .logo { gap: 0.5rem; }
       .logo-mark { height: 20px; }
       .logo-text { font-size: 1.05rem; }
@@ -645,6 +653,7 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1rem; }
     }
   </style>
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -660,9 +669,10 @@
     <a href="#demo">Demo</a>
     <a href="#moduly">Modules</a>
     <a href="#plan">Roadmap</a>
+    <a href="#tym">Team</a>
     <a href="#spoluprace">Partnership</a>
     <a href="mri.html" class="nav-mri">MRI centre</a>
-    <a href="../index.html" class="lang" hreflang="cs" lang="cs" title="Česky"><svg viewBox="0 0 6 4" aria-hidden="true"><rect width="6" height="2" fill="#fff"/><rect y="2" width="6" height="2" fill="#d7141a"/><path d="M0,0L3,2L0,4z" fill="#11457e"/></svg>CS</a>
+    <a href="../index.html" class="lang" hreflang="cs" lang="cs" title="Česky">CS</a>
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </header>
@@ -675,13 +685,13 @@
     <p class="hero-sub">by MontesMedica</p>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      AI expert systems for MRI. Each module is a specialised second reader for one body region. The first module reads knee MRI: abnormal finding, anterior cruciate ligament tear and meniscal tear. Our focus is sports injuries in children and adolescents.
+      AI expert systems for MRI. Each module is a specialised second reader for one body region. The first module reads knee MRI: abnormal finding, anterior cruciate ligament tear and meniscal tear. Our focus is sports injuries in children and adolescents. aEyes is a project of MontesMedica s.r.o., which is also preparing an <a href="mri.html">MRI centre</a>.
     </p>
     <div class="hero-pills">
-      <span class="pill now">Knee MRI · now</span>
-      <span class="pill">Spine MRI · 2027</span>
-      <span class="pill">Histopathology · 2028</span>
+      <span class="pill now">Knee MRI · working prototype</span>
+      <span class="pill">Spine MRI · planned</span>
     </div>
+    <p class="note">Research prototype. Not a medical device and not intended for clinical use.</p>
   </div>
 
   <div class="scan" aria-hidden="true">
@@ -728,7 +738,7 @@
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
-    <div class="stat-label">Designed from day one as a Class IIa medical device.</div>
+    <div class="stat-label">We are developing towards certification under the EU MDR; the target class is IIa.</div>
   </div>
 </div>
 
@@ -747,10 +757,19 @@
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Decisions</p>
       <h3 class="card-title">Two findings decide what happens next</h3>
-      <p class="card-text">An ACL tear and a meniscal tear decide between conservative treatment and surgery. In the Stanford MRNet reader study, model assistance raised clinicians' specificity for ACL tears by 4.8 percentage points: fewer false positives in patients without a tear.</p>
+      <p class="card-text">An ACL tear and a meniscal tear decide between conservative treatment and surgery. From the literature: in the Stanford MRNet reader study, model assistance raised clinicians' specificity for ACL tears by 4.8 percentage points: fewer false positives in patients without a tear.</p>
     </div>
   </div>
-  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (MRNet reader study)</p>
+  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes)</p>
+</section>
+
+<!-- ── Validation status ── -->
+<section class="validation" id="validace">
+  <div class="reveal">
+    <p class="section-label">Validation status</p>
+    <p class="section-lead">The prototype has been validated on public data from adult patients (MRNet). Whether it carries over to children's and adolescents' knees is a hypothesis that we will test on data from partner hospitals.</p>
+    <!-- TODO: our own metrics and methodology -->
+  </div>
 </section>
 
 <!-- ── Pipeline ── -->
@@ -854,24 +873,19 @@
   </div>
   <div class="modules">
     <div class="module current reveal">
-      <p class="module-when">Now · knee MRI</p>
+      <p class="module-when">Working prototype · knee MRI</p>
       <h3 class="module-name">aEyes-<span>knee</span></h3>
       <p class="module-text">Abnormal finding, ACL tear, meniscal tear. The first module and the regulatory template for all that follow.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.1s">
-      <p class="module-when">2027 · spine MRI</p>
+      <p class="module-when">Planned · spine MRI</p>
       <h3 class="module-name">aEyes-<span>spine</span></h3>
       <p class="module-text">Lumbar spine. Same platform, same hospital installation, new module.</p>
-    </div>
-    <div class="module reveal" style="transition-delay:0.2s">
-      <p class="module-when">2028 · histopathology</p>
-      <h3 class="module-name">aEyes-<span>path</span></h3>
-      <p class="module-text">Digitised slides at gigapixel resolution. Same principle: the model learns which parts of the image decide.</p>
     </div>
     <div class="module wide reveal">
       <p class="module-when">Shared platform</p>
       <h3 class="module-name">One <span>platform</span></h3>
-      <p class="module-text">From model training to the reading room. It plugs easily into the tools a department already uses: PACS, RIS, DICOM viewer. One GPU workstation per site, no patient data in the cloud.</p>
+      <p class="module-text">From model training to the reading room. It plugs easily into the tools a department already uses: PACS, RIS, DICOM viewer. One GPU workstation per site, no patient data in the cloud. The platform is also designed for other imaging modalities.</p>
     </div>
   </div>
 </section>
@@ -888,81 +902,67 @@
       <div class="phase-when">Q4 2026</div>
       <p class="phase-title">Proof of concept</p>
       <ul>
-        <li>Accuracy on par with published results on the MRNet dataset</li>
-        <li>External validation on independent data</li>
-        <li>Demo running on a single GPU</li>
+        <li><b>in progress:</b> accuracy on par with published results on the MRNet dataset</li>
+        <li><b>in progress:</b> external validation on independent data</li>
+        <li><b>in progress:</b> demo running on a single GPU</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.1s">
       <div class="phase-when">H1 2027</div>
       <p class="phase-title">Clinical pilot</p>
       <ul>
-        <li>Installation at the pilot site</li>
-        <li>Reader study at a partner hospital</li>
-        <li>Data agreements</li>
+        <li><b>target:</b> installation at the pilot site</li>
+        <li><b>target:</b> reader study at a partner hospital</li>
+        <li><b>target:</b> data agreements</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.2s">
       <div class="phase-when">H2 2027</div>
       <p class="phase-title">MDR Class IIa</p>
       <ul>
-        <li>ISO 13485 quality management system</li>
-        <li>Technical documentation and clinical evaluation</li>
-        <li>Spine module proof of concept</li>
+        <li><b>target:</b> ISO 13485 quality management system</li>
+        <li><b>target:</b> technical documentation and clinical evaluation</li>
+        <li><b>target:</b> spine module proof of concept</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.3s">
       <div class="phase-when">2028</div>
       <p class="phase-title">CE mark</p>
       <ul>
-        <li>CE marking for aEyes-knee</li>
-        <li>First deployments in Czechia</li>
-        <li>Histopathology module proof of concept</li>
+        <li><b>target:</b> CE marking for aEyes-knee</li>
+        <li><b>target:</b> first deployments in Czechia</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ── Team: hidden for now ──
+<!-- ── Team ── -->
 <section class="team" id="tym">
   <div class="reveal">
     <p class="section-label">Team</p>
-    <h2 class="section-title">Medicine, software<br><em>and artificial intelligence</em></h2>
-    <p class="section-lead">A small team in Prague. The founders combine experience in medicine, software development and artificial intelligence; three more people build aEyes and run the company.</p>
+    <h2 class="section-title">Who is behind the company</h2>
   </div>
-  <p class="team-group reveal">Founders</p>
-  <div class="people two">
-    <div class="person reveal">
-      <div class="avatar" aria-hidden="true">JC</div>
-      <h3 class="person-name">Jindřich Cincibuch</h3>
-      <p class="person-role">Co-founder · Director</p>
+  <div class="cards">
+    <div class="card reveal">
+      <h3 class="card-title">Orthopaedics</h3>
+      <p class="card-text">An orthopaedic surgeon in clinical practice. Defines what the system should assess and what the output for physicians should look like.</p>
     </div>
-    <div class="person reveal" style="transition-delay:0.1s">
-      <div class="avatar" aria-hidden="true">MB</div>
-      <h3 class="person-name">Martin Baloun</h3>
-      <p class="person-role">Co-founder · Director</p>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <h3 class="card-title">Artificial intelligence</h3>
+      <p class="card-text">Machine learning and medical image analysis. Model design, training and validation.</p>
     </div>
-  </div>
-  <p class="team-group reveal">Team</p>
-  <div class="people">
-    <div class="person reveal">
-      <div class="avatar" aria-hidden="true">MŠ</div>
-      <h3 class="person-name">Marek Šust</h3>
-      <p class="person-role">Software development</p>
+    <div class="card reveal">
+      <h3 class="card-title">Software</h3>
+      <p class="card-text">Software development and operations, integration with hospital systems (PACS, DICOM).</p>
     </div>
-    <div class="person reveal" style="transition-delay:0.1s">
-      <div class="avatar" aria-hidden="true">PV</div>
-      <h3 class="person-name">Pavel Vágnerek</h3>
-      <p class="person-role">Software development</p>
-    </div>
-    <div class="person reveal" style="transition-delay:0.2s">
-      <div class="avatar" aria-hidden="true">LK</div>
-      <h3 class="person-name">Laura Kosáková</h3>
-      <p class="person-role">Back office</p>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <h3 class="card-title">Business</h3>
+      <p class="card-text">Hospital partnerships, funding and grants.</p>
     </div>
   </div>
+  <p class="team-note reveal">We will gladly put you in touch with the right member of the team: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-backing reveal">Backing: member of the NVIDIA Inception program · Google for Startups Cloud Program · compute time from the EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
--->
 
 <!-- ── CTA ── -->
 <section class="cta" id="spoluprace">
@@ -985,6 +985,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
+  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File <!-- TODO: file number -->. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="mri.html">MRI centre</a></div>
 </footer>
 
 <script>

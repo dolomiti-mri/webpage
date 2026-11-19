@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aEyes by MontesMedica</title>
+  <title>aEyes by MontesMedica · výzkumný prototyp</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="MontesMedica" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:url" content="https://montesmedica.cz/" />
-  <meta property="og:title" content="aEyes by MontesMedica – AI druhé čtení MR snímků" />
-  <meta property="og:description" content="AI expertní systémy pro snímky magnetické rezonance. První modul: druhé čtení MR kolenního kloubu, se zaměřením na sportovní traumatologii dětí a dospívajících." />
+  <meta property="og:title" content="aEyes by MontesMedica – výzkumný prototyp AI pro druhé čtení MR" />
+  <meta property="og:description" content="Výzkumný prototyp AI pro druhé čtení MR kolenního kloubu, se zaměřením na sportovní traumatologii dětí a dospívajících. Není zdravotnický prostředek." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="aEyes by MontesMedica: AI expertní systémy pro snímky magnetické rezonance. První modul: druhé čtení MR kolenního kloubu, se zaměřením na sportovní traumatologii dětí a dospívajících." />
+  <meta name="description" content="aEyes by MontesMedica: výzkumný prototyp AI pro druhé čtení MR kolenního kloubu, se zaměřením na sportovní traumatologii dětí a dospívajících. Není zdravotnický prostředek." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -89,12 +89,12 @@
       color: #fff;
       opacity: 0.65;
       margin-left: 2.2rem;
+      white-space: nowrap;
       transition: opacity 0.2s, color 0.2s;
     }
     nav a:hover { opacity: 1; color: var(--teal2); }
     nav { display: flex; align-items: center; }
     nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
-    nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
     nav a.nav-mri { opacity: 1; color: var(--teal2); font-weight: 500; }
     .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: #fff; }
     .burger svg { width: 22px; height: 22px; display: block; }
@@ -158,6 +158,9 @@
       color: rgba(255,255,255,0.8);
     }
     .pill.now { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .hero-lead a { color: var(--teal2); text-decoration: none; border-bottom: 1px solid rgba(36,145,143,0.5); }
+    .hero-lead a:hover { border-bottom-color: var(--teal2); }
+    .hero .note { max-width: 480px; }
 
     /* Knee "scan" visual */
     .scan {
@@ -288,6 +291,9 @@
       margin-top: 1.6rem;
     }
 
+    .validation { padding-top: 0; }
+    .validation .section-lead { margin-top: 0; }
+
     /* ── Pipeline ── */
     .pipeline { background: var(--faint); }
     .steps {
@@ -336,7 +342,7 @@
     .suite .section-lead { color: rgba(255,255,255,0.65); }
     .modules {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.1);
@@ -400,6 +406,7 @@
       position: relative;
       margin-bottom: 0.5rem;
     }
+    .phase li b { font-weight: 500; color: var(--teal); }
     .phase li::before {
       content: '';
       position: absolute; left: 0; top: 0.6em;
@@ -497,28 +504,17 @@
 
     /* ── Team ── */
     .team { background: var(--faint); }
-    .team-group {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--teal);
-      margin: 3.5rem 0 1rem;
+    .team-note {
+      font-size: 0.92rem; line-height: 1.8;
+      color: rgba(13,26,31,0.7);
+      margin-top: 2.4rem;
     }
-    .team-group:first-of-type { margin-top: 4rem; }
-    .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .people.two { grid-template-columns: repeat(2, 1fr); }
-    .person { background: #fff; padding: 2.4rem 2.2rem; }
-    .avatar {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--mist); color: var(--teal);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em;
-      margin-bottom: 1.4rem;
-    }
-    .person-name { font-size: 1.1rem; font-weight: 500; }
-    .person-role {
-      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold);
-      margin: 0.4rem 0 0.9rem;
+    .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
+    .team-note a:hover { border-bottom-color: var(--teal); }
+    .team-backing {
+      font-size: 0.78rem; line-height: 1.7;
+      color: rgba(13,26,31,0.6);
+      margin-top: 0.8rem;
     }
 
     /* ── Disclaimer / CTA ── */
@@ -571,6 +567,14 @@
       justify-content: space-between;
       font-size: 0.78rem;
       letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .footer-legal {
+      flex-basis: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      line-height: 1.7;
     }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--teal2); }
@@ -596,16 +600,18 @@
     }
     .hot { animation: glow 3s ease-in-out infinite; }
 
-    .reveal {
+    /* Content is visible without JS; the fade-in only applies when JS runs */
+    .js .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s, transform 0.8s;
+      transform: translateY(12px);
+      transition: opacity 0.5s, transform 0.5s;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .js .reveal.visible { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       .scan-line, .hot { animation: none; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
@@ -613,6 +619,17 @@
       .steps { grid-template-columns: 1fr; gap: 2.4rem; }
       .step { padding: 0; }
       .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 1340px) {
+      nav { margin-left: 1rem; }
+      nav a { display: none; white-space: nowrap; }
+      nav a.nav-mri { display: inline; margin-left: 0; }
+      nav a.lang { display: inline-flex; margin-left: 1rem; }
+      .burger { display: block; }
+      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(13,26,31,0.97); backdrop-filter: blur(12px); margin: 0; }
+      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
     }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding: 8rem 1rem 4rem; gap: 3rem; min-height: auto; }
@@ -627,15 +644,6 @@
       .demo-grid { grid-template-columns: 1fr; }
       .people, .people.two { grid-template-columns: 1fr; }
       header { padding: 1.2rem 1rem; }
-      nav { margin-left: 1rem; }
-      nav a { display: none; white-space: nowrap; }
-      nav a.nav-mri { display: inline; margin-left: 0; }
-      nav a.lang { display: inline-flex; margin-left: 1rem; }
-      .burger { display: block; }
-      nav.open { position: fixed; inset: 0 0 auto 0; flex-direction: column; align-items: stretch; padding: 4.6rem 1rem 1.4rem; background: rgba(13,26,31,0.97); backdrop-filter: blur(12px); margin: 0; }
-      nav.open a { display: block; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open a.lang { display: inline-flex; margin: 0; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
-      nav.open .burger { position: absolute; right: 1rem; top: 1.1rem; }
       .logo { gap: 0.5rem; }
       .logo-mark { height: 20px; }
       .logo-text { font-size: 1.05rem; }
@@ -645,6 +653,7 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1rem; }
     }
   </style>
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -660,9 +669,10 @@
     <a href="#demo">Demo</a>
     <a href="#moduly">Moduly</a>
     <a href="#plan">Plán</a>
+    <a href="#tym">Tým</a>
     <a href="#spoluprace">Spolupráce</a>
     <a href="mri.html" class="nav-mri">MR pracoviště</a>
-    <a href="en/index.html" class="lang" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
+    <a href="en/index.html" class="lang" hreflang="en" lang="en" title="English">EN</a>
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </header>
@@ -675,13 +685,13 @@
     <p class="hero-sub">by MontesMedica</p>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      AI expertní systémy pro snímky magnetické rezonance. Každý modul je specializovaný druhý čtenář pro jednu oblast těla. První modul hodnotí MR kolenního kloubu: abnormální nález, rupturu předního zkříženého vazu a rupturu menisku. Cílíme na sportovní traumatologii dětí a dospívajících.
+      AI expertní systémy pro snímky magnetické rezonance. Každý modul je specializovaný druhý čtenář pro jednu oblast těla. První modul hodnotí MR kolenního kloubu: abnormální nález, rupturu předního zkříženého vazu a rupturu menisku. Cílíme na sportovní traumatologii dětí a dospívajících. aEyes je projekt společnosti MontesMedica s.r.o., která zároveň připravuje <a href="mri.html">pracoviště magnetické rezonance</a>.
     </p>
     <div class="hero-pills">
-      <span class="pill now">MR kolenního kloubu · nyní</span>
-      <span class="pill">MR páteře · 2027</span>
-      <span class="pill">Histopatologie · 2028</span>
+      <span class="pill now">MR kolenního kloubu · funkční prototyp</span>
+      <span class="pill">MR páteře · v plánu</span>
     </div>
+    <p class="note">Výzkumný prototyp. Není zdravotnický prostředek a není určen ke klinickému použití.</p>
   </div>
 
   <div class="scan" aria-hidden="true">
@@ -728,7 +738,7 @@
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
-    <div class="stat-label">Od začátku vyvíjeno jako zdravotnický prostředek třídy IIa.</div>
+    <div class="stat-label">Vývoj směřujeme k certifikaci podle EU MDR, cílová třída IIa.</div>
   </div>
 </div>
 
@@ -747,10 +757,19 @@
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Rozhodnutí</p>
       <h3 class="card-title">Dva nálezy, na kterých závisí další postup</h3>
-      <p class="card-text">Ruptura předního zkříženého vazu a ruptura menisku rozhodují mezi konzervativní léčbou a operací. Ve čtenářské studii Stanford MRNet zvýšila asistence modelu specificitu lékařů u ruptury LCA o 4,8 procentního bodu: méně falešně pozitivních nálezů u pacientů bez ruptury.</p>
+      <p class="card-text">Ruptura předního zkříženého vazu a ruptura menisku rozhodují mezi konzervativní léčbou a operací. Z literatury: ve čtenářské studii Stanford MRNet zvýšila asistence modelu specificitu lékařů u ruptury LCA o 4,8 procentního bodu: méně falešně pozitivních nálezů u pacientů bez ruptury.</p>
     </div>
   </div>
-  <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (čtenářská studie MRNet)</p>
+  <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes)</p>
+</section>
+
+<!-- ── Validation status ── -->
+<section class="validation" id="validace">
+  <div class="reveal">
+    <p class="section-label">Stav validace</p>
+    <p class="section-lead">Prototyp je ověřený na veřejných datech dospělých pacientů (MRNet). Přenos na dětská a dorostová kolena je hypotéza, kterou ověříme na datech partnerských nemocnic.</p>
+    <!-- TODO: vlastní metriky a metodika -->
+  </div>
 </section>
 
 <!-- ── Pipeline ── -->
@@ -854,24 +873,19 @@
   </div>
   <div class="modules">
     <div class="module current reveal">
-      <p class="module-when">Nyní · MR kolenního kloubu</p>
+      <p class="module-when">Funkční prototyp · MR kolenního kloubu</p>
       <h3 class="module-name">aEyes-<span>knee</span></h3>
       <p class="module-text">Abnormální nález, ruptura LCA, ruptura menisku. První modul a zároveň regulatorní šablona pro všechny další.</p>
     </div>
     <div class="module reveal" style="transition-delay:0.1s">
-      <p class="module-when">2027 · MR páteře</p>
+      <p class="module-when">V plánu · MR páteře</p>
       <h3 class="module-name">aEyes-<span>spine</span></h3>
       <p class="module-text">Bederní páteř. Stejná platforma, stejná instalace v nemocnici, nový modul.</p>
-    </div>
-    <div class="module reveal" style="transition-delay:0.2s">
-      <p class="module-when">2028 · Histopatologie</p>
-      <h3 class="module-name">aEyes-<span>path</span></h3>
-      <p class="module-text">Digitalizované preparáty v gigapixelovém rozlišení. Stejný princip: model se naučí, které části snímku rozhodují.</p>
     </div>
     <div class="module wide reveal">
       <p class="module-when">Sdílená platforma</p>
       <h3 class="module-name">Jedna <span>platforma</span></h3>
-      <p class="module-text">Od trénování modelu po provoz v popisovně. Snadno se zapojí do nástrojů, které pracoviště už používá: PACS, RIS, DICOM prohlížeč. Jedna pracovní stanice s GPU na pracoviště, žádná data pacientů v cloudu.</p>
+      <p class="module-text">Od trénování modelu po provoz v popisovně. Snadno se zapojí do nástrojů, které pracoviště už používá: PACS, RIS, DICOM prohlížeč. Jedna pracovní stanice s GPU na pracoviště, žádná data pacientů v cloudu. Platforma je navržená i pro další modality.</p>
     </div>
   </div>
 </section>
@@ -888,81 +902,67 @@
       <div class="phase-when">Q4 2026</div>
       <p class="phase-title">Proof of concept</p>
       <ul>
-        <li>Přesnost na úrovni publikovaných výsledků na datasetu MRNet</li>
-        <li>Externí validace na nezávislých datech</li>
-        <li>Demo běžící na jedné GPU</li>
+        <li><b>probíhá:</b> přesnost na úrovni publikovaných výsledků na datasetu MRNet</li>
+        <li><b>probíhá:</b> externí validace na nezávislých datech</li>
+        <li><b>probíhá:</b> demo běžící na jedné GPU</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.1s">
       <div class="phase-when">H1 2027</div>
       <p class="phase-title">Klinický pilot</p>
       <ul>
-        <li>Instalace na pilotním pracovišti</li>
-        <li>Čtenářská studie v partnerské nemocnici</li>
-        <li>Smlouvy o datech</li>
+        <li><b>cíl:</b> instalace na pilotním pracovišti</li>
+        <li><b>cíl:</b> čtenářská studie v partnerské nemocnici</li>
+        <li><b>cíl:</b> smlouvy o datech</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.2s">
       <div class="phase-when">H2 2027</div>
       <p class="phase-title">MDR třída IIa</p>
       <ul>
-        <li>Systém řízení kvality ISO 13485</li>
-        <li>Technická dokumentace a klinické hodnocení</li>
-        <li>PoC modulu pro páteř</li>
+        <li><b>cíl:</b> systém řízení kvality ISO 13485</li>
+        <li><b>cíl:</b> technická dokumentace a klinické hodnocení</li>
+        <li><b>cíl:</b> PoC modulu pro páteř</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.3s">
       <div class="phase-when">2028</div>
       <p class="phase-title">CE značka</p>
       <ul>
-        <li>CE značení aEyes-knee</li>
-        <li>První nasazení v Česku</li>
-        <li>PoC modulu pro histopatologii</li>
+        <li><b>cíl:</b> CE značení aEyes-knee</li>
+        <li><b>cíl:</b> první nasazení v Česku</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ── Team: hidden for now ──
+<!-- ── Team ── -->
 <section class="team" id="tym">
   <div class="reveal">
     <p class="section-label">Tým</p>
-    <h2 class="section-title">Medicína, software<br><em>a umělá inteligence</em></h2>
-    <p class="section-lead">Malý tým v Praze. Zakladatelé spojují zkušenosti z medicíny, vývoje softwaru a umělé inteligence; vývoj aEyes a provoz společnosti zajišťují tři další lidé.</p>
+    <h2 class="section-title">Kdo za firmou stojí</h2>
   </div>
-  <p class="team-group reveal">Zakladatelé</p>
-  <div class="people two">
-    <div class="person reveal">
-      <div class="avatar" aria-hidden="true">JC</div>
-      <h3 class="person-name">Jindřich Cincibuch</h3>
-      <p class="person-role">Spoluzakladatel · jednatel</p>
+  <div class="cards">
+    <div class="card reveal">
+      <h3 class="card-title">Ortopedie</h3>
+      <p class="card-text">Ortopedický chirurg z klinické praxe. Určuje, co má systém hodnotit a jak má vypadat výstup pro lékaře.</p>
     </div>
-    <div class="person reveal" style="transition-delay:0.1s">
-      <div class="avatar" aria-hidden="true">MB</div>
-      <h3 class="person-name">Martin Baloun</h3>
-      <p class="person-role">Spoluzakladatel · jednatel</p>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <h3 class="card-title">Umělá inteligence</h3>
+      <p class="card-text">Strojové učení a analýza medicínského obrazu. Návrh, trénování a validace modelů.</p>
     </div>
-  </div>
-  <p class="team-group reveal">Tým</p>
-  <div class="people">
-    <div class="person reveal">
-      <div class="avatar" aria-hidden="true">MŠ</div>
-      <h3 class="person-name">Marek Šust</h3>
-      <p class="person-role">Vývoj</p>
+    <div class="card reveal">
+      <h3 class="card-title">Software</h3>
+      <p class="card-text">Vývoj a provoz softwaru, integrace do nemocničních systémů (PACS, DICOM).</p>
     </div>
-    <div class="person reveal" style="transition-delay:0.1s">
-      <div class="avatar" aria-hidden="true">PV</div>
-      <h3 class="person-name">Pavel Vágnerek</h3>
-      <p class="person-role">Vývoj</p>
-    </div>
-    <div class="person reveal" style="transition-delay:0.2s">
-      <div class="avatar" aria-hidden="true">LK</div>
-      <h3 class="person-name">Laura Kosáková</h3>
-      <p class="person-role">Back office</p>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <h3 class="card-title">Business</h3>
+      <p class="card-text">Spolupráce s nemocnicemi, financování a granty.</p>
     </div>
   </div>
+  <p class="team-note reveal">Rádi vás propojíme s konkrétním členem týmu: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-backing reveal">Zázemí: člen programu NVIDIA Inception · Google for Startups Cloud Program · výpočetní čas EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
--->
 
 <!-- ── CTA ── -->
 <section class="cta" id="spoluprace">
@@ -985,6 +985,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; IČ: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
+  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka <!-- TODO: číslo vložky -->. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="mri.html">MR pracoviště</a></div>
 </footer>
 
 <script>

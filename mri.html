@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MR pracoviště · MontesMedica</title>
+  <title>Připravované pracoviště MR · MontesMedica</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="MontesMedica" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:url" content="https://montesmedica.cz/mri.html" />
-  <meta property="og:title" content="MontesMedica – magnetická rezonance, Středočeský kraj" />
-  <meta property="og:description" content="Připravujeme otevření moderního pracoviště magnetické rezonance ve Středočeském kraji." />
+  <meta property="og:title" content="MontesMedica – připravované pracoviště magnetické rezonance, Středočeský kraj" />
+  <meta property="og:description" content="Připravujeme pracoviště magnetické rezonance ve Středočeském kraji. Projekt je ve fázi přípravy." />
   <meta property="og:image" content="https://montesmedica.cz/assets/img/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a6b6b" />
-  <meta name="description" content="Připravujeme otevření moderního pracoviště magnetické rezonance ve Středočeském kraji." />
+  <meta name="description" content="Připravujeme pracoviště magnetické rezonance ve Středočeském kraji. Projekt je ve fázi přípravy." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,7 +104,6 @@
     nav a:hover { opacity: 1; color: var(--teal); }
     nav { display: flex; align-items: center; }
     nav a.lang { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: 1.8rem; }
-    nav a.lang svg { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.18); }
     .burger { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; margin-left: 1rem; color: var(--ink); }
     .burger svg { width: 22px; height: 22px; display: block; }
     nav a.nav-aeyes { opacity: 1; color: var(--teal); font-weight: 500; }
@@ -315,6 +314,8 @@
       color: rgba(255,255,255,0.72);
     }
     .about-body p + p { margin-top: 1.4rem; }
+    .about-body a { color: var(--teal2); text-decoration: none; border-bottom: 1px solid rgba(36,145,143,0.5); }
+    .about-body a:hover { border-bottom-color: var(--teal2); }
     .about-accent {
       width: 40px; height: 1px;
       background: var(--gold);
@@ -336,10 +337,10 @@
     .stat:first-child { padding-left: 0; }
     .stat:last-child { border-right: none; }
     .stat-num {
-      font-size: 2.6rem;
+      font-size: clamp(1.6rem, 2.6vw, 2.4rem);
       font-weight: 300;
       color: #fff;
-      line-height: 1;
+      line-height: 1.1;
     }
     .stat-label {
       font-size: 0.75rem;
@@ -405,6 +406,22 @@
       color: rgba(13,26,31,0.65);
     }
 
+    /* ── Team ── */
+    .features.team { padding-top: 0; }
+    .features-grid.four { grid-template-columns: repeat(4, 1fr); }
+    .team-note {
+      font-size: 0.92rem; line-height: 1.8;
+      color: rgba(13,26,31,0.7);
+      margin-top: 2.4rem;
+    }
+    .team-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
+    .team-note a:hover { border-bottom-color: var(--teal); }
+    .team-backing {
+      font-size: 0.78rem; line-height: 1.7;
+      color: rgba(13,26,31,0.6);
+      margin-top: 0.8rem;
+    }
+
     /* ── Contact ── */
     .contact {
       background: var(--faint);
@@ -459,28 +476,8 @@
 
     /* Contact form side */
     .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(13,26,31,0.5);
-    }
-    .form-input, .form-textarea {
-      background: #fff;
-      border: 1px solid rgba(26,107,107,0.2);
-      padding: 0.85rem 1rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      color: var(--ink);
-      transition: border-color 0.2s;
-      outline: none;
-      width: 100%;
-    }
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--teal);
-    }
-    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 0.8rem; line-height: 1.7; color: rgba(13,26,31,0.6); }
+    .form-note a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(26,107,107,0.35); }
     .form-submit {
       align-self: flex-start;
       margin-top: 0.5rem;
@@ -496,6 +493,14 @@
       justify-content: space-between;
       font-size: 0.78rem;
       letter-spacing: 0.04em;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .footer-legal {
+      flex-basis: 100%;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      line-height: 1.7;
     }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: var(--teal2); }
@@ -527,18 +532,25 @@
       100% { top: 90%; opacity: 0; }
     }
 
-    /* Scroll reveal */
-    .reveal {
+    /* Scroll reveal: content is visible without JS; the fade-in only applies when JS runs */
+    .js .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s, transform 0.8s;
+      transform: translateY(12px);
+      transition: opacity 0.5s, transform 0.5s;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .js .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-eyebrow, .hero-title, .hero-divider, .hero-lead, .hero-cta, .hero-data { animation: none; opacity: 1; transform: none; }
+      .ring, .ring-core, .scan-line { animation: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1200px) {
+      .features-grid.four { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
@@ -548,7 +560,7 @@
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .features { padding: 5rem 2rem; }
-      .features-grid { grid-template-columns: 1fr; gap: 2px; }
+      .features-grid, .features-grid.four { grid-template-columns: 1fr; gap: 2px; }
       .contact { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
       section { padding: 5rem 2rem; }
       header { padding: 1.2rem 1.5rem; }
@@ -567,6 +579,7 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
     }
   </style>
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -578,10 +591,11 @@
   </a>
   <nav>
     <a href="#o-nas">O nás</a>
-    <a href="#diagnostika">Diagnostika</a>
+    <a href="#diagnostika">Zaměření</a>
+    <a href="#tym">Tým</a>
     <a href="#kontakt">Kontakt</a>
     <a href="index.html" class="nav-aeyes">aEyes</a>
-    <a href="en/mri.html" class="lang" hreflang="en" lang="en" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" stroke="#C8102E" stroke-width="2"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</a>
+    <a href="en/mri.html" class="lang" hreflang="en" lang="en" title="English">EN</a>
     <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </header>
@@ -589,13 +603,13 @@
 <!-- ── Hero ── -->
 <section class="hero" id="home">
   <div class="hero-left">
-    <p class="hero-eyebrow">Středočeský kraj · 2026/2027</p>
+    <p class="hero-eyebrow">Středočeský kraj · projekt v přípravě</p>
     <h1 class="hero-title">
-      Moderní pracoviště<br><em>magnetické rezonance</em>
+      Připravujeme pracoviště<br><em>magnetické rezonance</em>
     </h1>
     <div class="hero-divider"></div>
     <p class="hero-lead">
-      Připravujeme otevření špičkového diagnostického centra. Naším cílem je zvýšit dostupnost specializované péče nejnovějšími technologiemi MR zobrazování.
+      Naším cílem je zlepšit dostupnost vyšetření magnetickou rezonancí ve Středočeském kraji. Projekt je ve fázi přípravy, pracoviště zatím není v provozu.
     </p>
     <div class="hero-cta">
       <a href="#kontakt" class="btn">
@@ -632,20 +646,16 @@
 <!-- ── Stats ── -->
 <div class="stats reveal">
   <div class="stat">
-    <div class="stat-num">1,5T</div>
-    <div class="stat-label">Síla magnetu</div>
+    <div class="stat-num">1,5 T</div>
+    <div class="stat-label">Plánovaný přístroj</div>
   </div>
   <div class="stat">
-    <div class="stat-num">0</div>
-    <div class="stat-label">Ionizující záření</div>
+    <div class="stat-num">Středočeský kraj</div>
+    <div class="stat-label">Lokalita</div>
   </div>
   <div class="stat">
-    <div class="stat-num"><a href="index.html" style="color:inherit;text-decoration:none">aEyes</a></div>
-    <div class="stat-label">AI asistovaná analýza</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">24/7</div>
-    <div class="stat-label">Objednávací systém</div>
+    <div class="stat-num">V přípravě</div>
+    <div class="stat-label">Stav projektu</div>
   </div>
 </div>
 
@@ -660,14 +670,14 @@
   <div class="reveal">
     <div class="about-body">
       <p>
-        Jsme multidisciplinární tým s hlubokými zkušenostmi z medicíny, vývoje softwaru a umělé inteligence. Tato kombinace nám umožňuje přistupovat k diagnostice inovativně a efektivně.
+        Jsme tým se zkušenostmi z medicíny, vývoje softwaru a umělé inteligence. <a href="index.html">aEyes</a>, náš systém umělé inteligence pro hodnocení MR snímků, je samostatný výzkumný projekt společnosti a není součástí zdravotní péče.
       </p>
       <div class="about-accent"></div>
       <p>
-        Magnetická rezonance patří dnes k nepostradatelným nástrojům moderní klinické praxe — umožňuje přesnou diagnostiku bez ionizujícího záření a je klíčová napříč obory od neurologie přes ortopedii až po onkologii.
+        Magnetická rezonance zobrazuje bez ionizujícího záření a využívá se napříč obory od neurologie přes ortopedii až po onkologii.
       </p>
       <p>
-        Poptávka po vyšetření MR ve Středočeském kraji dlouhodobě převyšuje dostupné kapacity, což vede k prodlužování čekacích dob. Naše pracoviště si klade za cíl tuto mezeru zaplnit a přinést do regionu rychlou, kvalitní a technologicky vyspělou diagnostiku.
+        Poptávka po vyšetření MR ve Středočeském kraji dlouhodobě převyšuje dostupné kapacity, což vede k prodlužování čekacích dob. Připravované pracoviště má kapacitu v regionu rozšířit.
       </p>
     </div>
   </div>
@@ -676,8 +686,8 @@
 <!-- ── Features ── -->
 <section class="features" id="diagnostika">
   <div class="features-header reveal">
-    <p class="section-label">Naše zaměření</p>
-    <h2 class="features-title">Technologicky vyspělá<br>diagnostika pro region</h2>
+    <p class="section-label">Plánované zaměření</p>
+    <h2 class="features-title">Na co se<br>pracoviště zaměří</h2>
   </div>
   <div class="features-grid">
     <div class="feature-card reveal">
@@ -692,7 +702,7 @@
         </svg>
       </div>
       <h3 class="feature-title">Neurologie</h3>
-      <p class="feature-text">Precizní zobrazení mozku a páteře. Diagnostika roztroušené sklerózy, cévních mozkových příhod, nádorů a degenerativních onemocnění CNS.</p>
+      <p class="feature-text">Budeme zobrazovat mozek a páteř, například při podezření na roztroušenou sklerózu, cévní mozkovou příhodu, nádor nebo degenerativní onemocnění CNS.</p>
     </div>
     <div class="feature-card reveal" style="transition-delay:0.15s">
       <div class="feature-icon">
@@ -705,7 +715,7 @@
         </svg>
       </div>
       <h3 class="feature-title">Ortopedie</h3>
-      <p class="feature-text">Detailní zobrazení kloubů, měkkých tkání, šlach a vazů. Klíčová diagnostika před operačními výkony i sledování průběhu léčby.</p>
+      <p class="feature-text">Budeme zobrazovat klouby, měkké tkáně, šlachy a vazy, před operačními výkony i při sledování průběhu léčby.</p>
     </div>
     <div class="feature-card reveal" style="transition-delay:0.3s">
       <div class="feature-icon">
@@ -717,9 +727,37 @@
         </svg>
       </div>
       <h3 class="feature-title">Onkologie</h3>
-      <p class="feature-text">Zobrazení a staging nádorových onemocnění bez radiační zátěže. Sledování odpovědi na léčbu s maximální přesností.</p>
+      <p class="feature-text">Budeme zobrazovat nádorová onemocnění, určovat jejich rozsah (staging) a sledovat odpověď na léčbu, bez ionizujícího záření.</p>
     </div>
   </div>
+</section>
+
+<!-- ── Team ── -->
+<section class="features team" id="tym">
+  <div class="features-header reveal">
+    <p class="section-label">Tým</p>
+    <h2 class="features-title">Kdo za firmou stojí</h2>
+  </div>
+  <div class="features-grid four">
+    <div class="feature-card reveal">
+      <h3 class="feature-title">Ortopedie</h3>
+      <p class="feature-text">Ortopedický chirurg z klinické praxe. Určuje, co má systém hodnotit a jak má vypadat výstup pro lékaře.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.1s">
+      <h3 class="feature-title">Umělá inteligence</h3>
+      <p class="feature-text">Strojové učení a analýza medicínského obrazu. Návrh, trénování a validace modelů.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.2s">
+      <h3 class="feature-title">Software</h3>
+      <p class="feature-text">Vývoj a provoz softwaru, integrace do nemocničních systémů (PACS, DICOM).</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.3s">
+      <h3 class="feature-title">Business</h3>
+      <p class="feature-text">Spolupráce s nemocnicemi, financování a granty.</p>
+    </div>
+  </div>
+  <p class="team-note reveal">Rádi vás propojíme s konkrétním členem týmu: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-backing reveal">Zázemí: člen programu NVIDIA Inception · Google for Startups Cloud Program · výpočetní čas EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
 
 <!-- ── Contact ── -->
@@ -760,24 +798,14 @@
   </div>
 
   <div class="contact-form reveal">
-    <div class="form-group">
-      <label class="form-label" for="name">Jméno a příjmení</label>
-      <input class="form-input" id="name" type="text" placeholder="Vaše jméno" />
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="email">E-mailová adresa</label>
-      <input class="form-input" id="email" type="email" placeholder="vas@email.cz" />
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="msg">Zpráva</label>
-      <textarea class="form-textarea" id="msg" placeholder="Váš dotaz nebo vzkaz..."></textarea>
-    </div>
+    <p class="contact-body">Napište nám e-mailem. Odpovíme na adresu, ze které zprávu pošlete.</p>
     <div class="form-submit">
-      <button class="btn" type="button" onclick="handleSubmit()">
-        Odeslat zprávu
+      <a class="btn" href="mailto:info@montesmedica.cz?subject=Dotaz%20z%20webu%20MontesMedica">
+        Napsat e-mail
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
+      </a>
     </div>
+    <p class="form-note">Jak nakládáme s vašimi údaji: <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>.</p>
   </div>
 </section>
 
@@ -786,6 +814,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; IČ: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
+  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka <!-- TODO: číslo vložky -->. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="index.html">aEyes</a></div>
 </footer>
 
 <script>
@@ -817,20 +846,6 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
-
-  // Form handler (mailto fallback — works without backend)
-  function handleSubmit() {
-    const name  = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg   = document.getElementById('msg').value.trim();
-    if (!name || !email || !msg) {
-      alert('Vyplňte prosím všechna pole.');
-      return;
-    }
-    const subject = encodeURIComponent('Dotaz z webu — MontesMedica');
-    const body    = encodeURIComponent(`Jméno: ${name}\nE-mail: ${email}\n\n${msg}`);
-    window.location.href = `mailto:info@montesmedica.cz?subject=${subject}&body=${body}`;
-  }
 </script>
 </body>
 </html>
