@@ -7,13 +7,9 @@ Statický web MontesMedica s.r.o. Nasazuje se automaticky přes GitHub Pages př
 
 | CS | EN |
 |---|---|
-| `index.html` – MR pracoviště (úvodní stránka) | `en/index.html` |
-| `mri.html` – jen přesměrování staré adresy na `/` | `en/mri.html` → `/en/` |
+| `index.html` – aEyes by MontesMedica, AI expertní systémy (úvodní stránka) | `en/index.html` |
+| `mri.html` – MR pracoviště | `en/mri.html` |
 | `aeyes.html` – jen přesměrování staré adresy na `/` | `en/aeyes.html` → `/en/` |
-
-Stránka aEyes je zatím skrytá (říjen 2026). Poslední verze je v commitu `ff2e078`
-(`index.html`, `en/index.html`). Vrátit ji lze např. `git show ff2e078:index.html > aeyes.html`
-a `git show ff2e078:en/index.html > en/aeyes.html`, pak odkomentovat odkaz `nav-aeyes` v obou `index.html`.
 
 Každá stránka má vlastní CSS v `<head>`; společné jsou jen obrázky v `assets/img/` (logo, favikona, OG obrázek).
 Při úpravě obsahu upravte vždy obě jazykové verze.
