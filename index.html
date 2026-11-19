@@ -24,9 +24,7 @@
   <meta name="theme-color" content="#1a6b6b" />
   <meta name="description" content="aEyes by MontesMedica: výzkumný prototyp AI pro druhé čtení MR kolenního kloubu, se zaměřením na sportovní traumatologii dětí a dospívajících. Není zdravotnický prostředek." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -406,7 +404,16 @@
       position: relative;
       margin-bottom: 0.5rem;
     }
-    .phase li b { font-weight: 500; color: var(--teal); }
+    .phase-status {
+      float: right;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--mist);
+      color: var(--teal);
+    }
+    .phase.current .phase-status { background: var(--teal); border-color: var(--teal); color: #fff; }
     .phase li::before {
       content: '';
       position: absolute; left: 0; top: 0.6em;
@@ -729,8 +736,8 @@
     <div class="stat-label">Podporuje rozhodování radiologa, nenahrazuje ho. Závěr vždy dělá lékař.</div>
   </div>
   <div class="stat">
-    <div class="stat-num">V nemocnici</div>
-    <div class="stat-label">Běží na jedné pracovní stanici s GPU přímo na pracovišti. Data pacientů ho neopouštějí.</div>
+    <div class="stat-num">Provoz na pracovišti</div>
+    <div class="stat-label">Navrženo pro provoz na jedné pracovní stanici s GPU přímo v nemocnici. Při vyhodnocení snímky pracoviště neopouštějí.</div>
   </div>
   <div class="stat">
     <div class="stat-num">Zdůvodněný nález</div>
@@ -885,7 +892,7 @@
     <div class="module wide reveal">
       <p class="module-when">Sdílená platforma</p>
       <h3 class="module-name">Jedna <span>platforma</span></h3>
-      <p class="module-text">Od trénování modelu po provoz v popisovně. Snadno se zapojí do nástrojů, které pracoviště už používá: PACS, RIS, DICOM prohlížeč. Jedna pracovní stanice s GPU na pracoviště, žádná data pacientů v cloudu. Platforma je navržená i pro další modality.</p>
+      <p class="module-text">Od trénování modelu po provoz v popisovně. Snadno se zapojí do nástrojů, které pracoviště už používá: PACS, RIS, DICOM prohlížeč. Jedna pracovní stanice s GPU na pracoviště, při provozu žádná data pacientů v cloudu. Platforma je navržená i pro další modality.</p>
     </div>
   </div>
 </section>
@@ -899,38 +906,42 @@
   </div>
   <div class="roadmap-grid">
     <div class="phase current reveal">
+      <span class="phase-status">probíhá</span>
       <div class="phase-when">Q4 2026</div>
       <p class="phase-title">Proof of concept</p>
       <ul>
-        <li><b>probíhá:</b> přesnost na úrovni publikovaných výsledků na datasetu MRNet</li>
-        <li><b>probíhá:</b> externí validace na nezávislých datech</li>
-        <li><b>probíhá:</b> demo běžící na jedné GPU</li>
+        <li>Přesnost na úrovni publikovaných výsledků na datasetu MRNet</li>
+        <li>Externí validace na nezávislých datech</li>
+        <li>Demo běžící na jedné GPU</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.1s">
+      <span class="phase-status">cíl</span>
       <div class="phase-when">H1 2027</div>
       <p class="phase-title">Klinický pilot</p>
       <ul>
-        <li><b>cíl:</b> instalace na pilotním pracovišti</li>
-        <li><b>cíl:</b> čtenářská studie v partnerské nemocnici</li>
-        <li><b>cíl:</b> smlouvy o datech</li>
+        <li>Instalace na pilotním pracovišti</li>
+        <li>Čtenářská studie v partnerské nemocnici</li>
+        <li>Smlouvy o datech</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.2s">
+      <span class="phase-status">cíl</span>
       <div class="phase-when">H2 2027</div>
       <p class="phase-title">MDR třída IIa</p>
       <ul>
-        <li><b>cíl:</b> systém řízení kvality ISO 13485</li>
-        <li><b>cíl:</b> technická dokumentace a klinické hodnocení</li>
-        <li><b>cíl:</b> PoC modulu pro páteř</li>
+        <li>Systém řízení kvality ISO 13485</li>
+        <li>Technická dokumentace a klinické hodnocení</li>
+        <li>PoC modulu pro páteř</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.3s">
+      <span class="phase-status">cíl</span>
       <div class="phase-when">2028</div>
       <p class="phase-title">CE značka</p>
       <ul>
-        <li><b>cíl:</b> CE značení aEyes-knee</li>
-        <li><b>cíl:</b> první nasazení v Česku</li>
+        <li>CE značení aEyes-knee</li>
+        <li>První nasazení v Česku</li>
       </ul>
     </div>
   </div>
@@ -985,7 +996,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; IČ: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
-  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka <!-- TODO: číslo vložky -->. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="mri.html">MR pracoviště</a></div>
+  <div class="footer-legal">Zapsána v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka 437016. &nbsp;·&nbsp; <a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a> &nbsp;·&nbsp; <a href="mri.html">MR pracoviště</a></div>
 </footer>
 
 <script>

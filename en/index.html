@@ -24,9 +24,7 @@
   <meta name="theme-color" content="#1a6b6b" />
   <meta name="description" content="aEyes by MontesMedica: a research prototype of an AI second reader for knee MRI, focused on sports injuries in children and adolescents. Not a medical device." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -406,7 +404,16 @@
       position: relative;
       margin-bottom: 0.5rem;
     }
-    .phase li b { font-weight: 500; color: var(--teal); }
+    .phase-status {
+      float: right;
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--mist);
+      color: var(--teal);
+    }
+    .phase.current .phase-status { background: var(--teal); border-color: var(--teal); color: #fff; }
     .phase li::before {
       content: '';
       position: absolute; left: 0; top: 0.6em;
@@ -729,8 +736,8 @@
     <div class="stat-label">Supports the radiologist's decision, never replaces it. The physician always makes the final call.</div>
   </div>
   <div class="stat">
-    <div class="stat-num">In the hospital</div>
-    <div class="stat-label">Runs on a single GPU workstation inside the hospital. Patient data never leaves the site.</div>
+    <div class="stat-num">On-site by design</div>
+    <div class="stat-label">Designed to run on a single GPU workstation inside the hospital. Images do not leave the site during analysis.</div>
   </div>
   <div class="stat">
     <div class="stat-num">Reasons shown</div>
@@ -885,7 +892,7 @@
     <div class="module wide reveal">
       <p class="module-when">Shared platform</p>
       <h3 class="module-name">One <span>platform</span></h3>
-      <p class="module-text">From model training to the reading room. It plugs easily into the tools a department already uses: PACS, RIS, DICOM viewer. One GPU workstation per site, no patient data in the cloud. The platform is also designed for other imaging modalities.</p>
+      <p class="module-text">From model training to the reading room. It plugs easily into the tools a department already uses: PACS, RIS, DICOM viewer. One GPU workstation per site, no patient data in the cloud during operation. The platform is also designed for other imaging modalities.</p>
     </div>
   </div>
 </section>
@@ -899,38 +906,42 @@
   </div>
   <div class="roadmap-grid">
     <div class="phase current reveal">
+      <span class="phase-status">in progress</span>
       <div class="phase-when">Q4 2026</div>
       <p class="phase-title">Proof of concept</p>
       <ul>
-        <li><b>in progress:</b> accuracy on par with published results on the MRNet dataset</li>
-        <li><b>in progress:</b> external validation on independent data</li>
-        <li><b>in progress:</b> demo running on a single GPU</li>
+        <li>Accuracy on par with published results on the MRNet dataset</li>
+        <li>External validation on independent data</li>
+        <li>Demo running on a single GPU</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.1s">
+      <span class="phase-status">target</span>
       <div class="phase-when">H1 2027</div>
       <p class="phase-title">Clinical pilot</p>
       <ul>
-        <li><b>target:</b> installation at the pilot site</li>
-        <li><b>target:</b> reader study at a partner hospital</li>
-        <li><b>target:</b> data agreements</li>
+        <li>Installation at the pilot site</li>
+        <li>Reader study at a partner hospital</li>
+        <li>Data agreements</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.2s">
+      <span class="phase-status">target</span>
       <div class="phase-when">H2 2027</div>
       <p class="phase-title">MDR Class IIa</p>
       <ul>
-        <li><b>target:</b> ISO 13485 quality management system</li>
-        <li><b>target:</b> technical documentation and clinical evaluation</li>
-        <li><b>target:</b> spine module proof of concept</li>
+        <li>ISO 13485 quality management system</li>
+        <li>Technical documentation and clinical evaluation</li>
+        <li>Spine module proof of concept</li>
       </ul>
     </div>
     <div class="phase reveal" style="transition-delay:0.3s">
+      <span class="phase-status">target</span>
       <div class="phase-when">2028</div>
       <p class="phase-title">CE mark</p>
       <ul>
-        <li><b>target:</b> CE marking for aEyes-knee</li>
-        <li><b>target:</b> first deployments in Czechia</li>
+        <li>CE marking for aEyes-knee</li>
+        <li>First deployments in Czechia</li>
       </ul>
     </div>
   </div>
@@ -985,7 +996,7 @@
   <div class="footer-logo">Montes<span>Medica</span> s.r.o.</div>
   <div>Fingerova 2181/9, 158 00 Praha 13 &nbsp;·&nbsp; Company ID: 24020028</div>
   <div>© 2026 MontesMedica s.r.o. &nbsp;·&nbsp; <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a></div>
-  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File <!-- TODO: file number -->. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="mri.html">MRI centre</a></div>
+  <div class="footer-legal">Registered in the Commercial Register kept by the Municipal Court in Prague, Section C, File 437016. &nbsp;·&nbsp; <a href="privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="mri.html">MRI centre</a></div>
 </footer>
 
 <script>
