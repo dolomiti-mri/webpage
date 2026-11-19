@@ -511,6 +511,9 @@
 
     /* ── Team ── */
     .team { background: var(--faint); }
+    .team .stats { margin-top: 4rem; padding: 3rem 2.4rem; }
+    .team .stat { padding: 0 2rem; }
+    .team .stat:first-child { padding-left: 0; }
     .team-note {
       font-size: 0.92rem; line-height: 1.8;
       color: rgba(13,26,31,0.7);
@@ -644,6 +647,8 @@
       section { padding: 5rem 1rem; }
       .stats { flex-direction: column; gap: 2rem; padding: 3rem 1rem; }
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
+      .team .stats { padding: 2.4rem 1.6rem; }
+      .team .stat { padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .cards, .modules, .roadmap-grid { grid-template-columns: 1fr; }
       .module.wide { grid-column: auto; }
@@ -676,7 +681,7 @@
     <a href="#demo">Demo</a>
     <a href="#moduly">Moduly</a>
     <a href="#plan">Plán</a>
-    <a href="#tym">Tým</a>
+    <a href="#tym">Expertíza</a>
     <a href="#spoluprace">Spolupráce</a>
     <a href="mri.html" class="nav-mri">MR pracoviště</a>
     <a href="en/index.html" class="lang" hreflang="en" lang="en" title="English">EN</a>
@@ -950,28 +955,28 @@
 <!-- ── Team ── -->
 <section class="team" id="tym">
   <div class="reveal">
-    <p class="section-label">Tým</p>
-    <h2 class="section-title">Kdo za firmou stojí</h2>
+    <p class="section-label">Expertíza</p>
+    <h2 class="section-title">Čtyři obory v jednom týmu</h2>
   </div>
-  <div class="cards">
-    <div class="card reveal">
-      <h3 class="card-title">Ortopedie</h3>
-      <p class="card-text">Ortopedický chirurg z klinické praxe. Určuje, co má systém hodnotit a jak má vypadat výstup pro lékaře.</p>
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="stat-num">Klinická ortopedie</div>
+      <div class="stat-label">Klinická praxe ortopedického chirurga. Z ní vychází, které nálezy systém hodnotí a jak má vypadat výstup pro lékaře.</div>
     </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <h3 class="card-title">Umělá inteligence</h3>
-      <p class="card-text">Strojové učení a analýza medicínského obrazu. Návrh, trénování a validace modelů.</p>
+    <div class="stat">
+      <div class="stat-num">Umělá inteligence</div>
+      <div class="stat-label">Strojové učení a analýza medicínského obrazu: návrh, trénování a validace modelů.</div>
     </div>
-    <div class="card reveal">
-      <h3 class="card-title">Software</h3>
-      <p class="card-text">Vývoj a provoz softwaru, integrace do nemocničních systémů (PACS, DICOM).</p>
+    <div class="stat">
+      <div class="stat-num">Software</div>
+      <div class="stat-label">Vývoj a provoz softwaru, integrace do nemocničních systémů (PACS, DICOM).</div>
     </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <h3 class="card-title">Business</h3>
-      <p class="card-text">Spolupráce s nemocnicemi, financování a granty.</p>
+    <div class="stat">
+      <div class="stat-num">Business</div>
+      <div class="stat-label">Spolupráce s nemocnicemi, financování a granty.</div>
     </div>
   </div>
-  <p class="team-note reveal">Rádi vás propojíme s konkrétním členem týmu: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-note reveal">Tým vám rádi představíme osobně: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
   <p class="team-backing reveal">Zázemí: člen programu NVIDIA Inception · Google for Startups Cloud Program · výpočetní čas EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
 

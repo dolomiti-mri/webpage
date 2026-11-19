@@ -511,6 +511,9 @@
 
     /* ── Team ── */
     .team { background: var(--faint); }
+    .team .stats { margin-top: 4rem; padding: 3rem 2.4rem; }
+    .team .stat { padding: 0 2rem; }
+    .team .stat:first-child { padding-left: 0; }
     .team-note {
       font-size: 0.92rem; line-height: 1.8;
       color: rgba(13,26,31,0.7);
@@ -644,6 +647,8 @@
       section { padding: 5rem 1rem; }
       .stats { flex-direction: column; gap: 2rem; padding: 3rem 1rem; }
       .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 2rem; }
+      .team .stats { padding: 2.4rem 1.6rem; }
+      .team .stat { padding: 0 0 2rem; }
       .stat:last-child { border-bottom: none; }
       .cards, .modules, .roadmap-grid { grid-template-columns: 1fr; }
       .module.wide { grid-column: auto; }
@@ -676,7 +681,7 @@
     <a href="#demo">Demo</a>
     <a href="#moduly">Modules</a>
     <a href="#plan">Roadmap</a>
-    <a href="#tym">Team</a>
+    <a href="#tym">Expertise</a>
     <a href="#spoluprace">Partnership</a>
     <a href="mri.html" class="nav-mri">MRI centre</a>
     <a href="../index.html" class="lang" hreflang="cs" lang="cs" title="Česky">CS</a>
@@ -950,28 +955,28 @@
 <!-- ── Team ── -->
 <section class="team" id="tym">
   <div class="reveal">
-    <p class="section-label">Team</p>
-    <h2 class="section-title">Who is behind the company</h2>
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Four disciplines, one team</h2>
   </div>
-  <div class="cards">
-    <div class="card reveal">
-      <h3 class="card-title">Orthopaedics</h3>
-      <p class="card-text">An orthopaedic surgeon in clinical practice. Defines what the system should assess and what the output for physicians should look like.</p>
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="stat-num">Clinical orthopaedics</div>
+      <div class="stat-label">The clinical practice of an orthopaedic surgeon. It determines which findings the system assesses and what the output for physicians should look like.</div>
     </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <h3 class="card-title">Artificial intelligence</h3>
-      <p class="card-text">Machine learning and medical image analysis. Model design, training and validation.</p>
+    <div class="stat">
+      <div class="stat-num">Artificial intelligence</div>
+      <div class="stat-label">Machine learning and medical image analysis: model design, training and validation.</div>
     </div>
-    <div class="card reveal">
-      <h3 class="card-title">Software</h3>
-      <p class="card-text">Software development and operations, integration with hospital systems (PACS, DICOM).</p>
+    <div class="stat">
+      <div class="stat-num">Software</div>
+      <div class="stat-label">Software development and operations, integration with hospital systems (PACS, DICOM).</div>
     </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <h3 class="card-title">Business</h3>
-      <p class="card-text">Hospital partnerships, funding and grants.</p>
+    <div class="stat">
+      <div class="stat-num">Business</div>
+      <div class="stat-label">Hospital partnerships, funding and grants.</div>
     </div>
   </div>
-  <p class="team-note reveal">We will gladly put you in touch with the right member of the team: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
+  <p class="team-note reveal">We will be glad to introduce the team in person: <a href="mailto:info@montesmedica.cz">info@montesmedica.cz</a>.</p>
   <p class="team-backing reveal">Backing: member of the NVIDIA Inception program · Google for Startups Cloud Program · compute time from the EuroHPC AI Factory (MareNostrum 5)</p>
 </section>
 
