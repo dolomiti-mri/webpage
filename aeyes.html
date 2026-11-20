@@ -289,8 +289,6 @@
       margin-top: 1.6rem;
     }
 
-    .validation { padding-top: 0; }
-
     /* ── Pipeline ── */
     .pipeline { background: var(--faint); }
     .steps {
@@ -762,37 +760,6 @@
   <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes)</p>
 </section>
 
-<!-- ── Validation status ── -->
-<section class="validation" id="validace">
-  <div class="reveal">
-    <p class="section-label">Stav validace</p>
-    <h2 class="section-title">Prototyp na úrovni <em>TRL 4</em></h2>
-    <p class="section-lead">TRL 4 znamená technologii ověřenou v laboratorním prostředí. U aEyes-knee to je ověření na veřejných datech dospělých pacientů, ne v klinickém provozu.</p>
-  </div>
-  <div class="cards">
-    <div class="card reveal">
-      <p class="card-kicker">Data</p>
-      <h3 class="card-title">Čtyři veřejné datasety MR kolene</h3>
-      <p class="card-text">MRNet (Stanford): nálezy radiologa k celému vyšetření. RSNA Knee Abnormality Detection: nálezy vytažené z textu zpráv. fastMRI+ (NYU): rámečky kolem poškození menisku. KneeMRI (KBC Rijeka): stupně poranění předního zkříženého vazu. Každý dataset nese jiný typ anotací.</p>
-    </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Architektura</p>
-      <h3 class="card-title">Slabě řízené učení s mapami důkazu</h3>
-      <p class="card-text">Model se učí hlavně z nálezů k celému vyšetření, bez označených míst na snímcích (slabě řízené učení). Čte řezy ve třech rovinách a průměruje výstupy více nezávisle natrénovaných sítí. Vlastní výstupní vrstva rozkládá každou predikci na mapy důkazu: které řezy a oblasti snímku ke skóre přispěly. Mapy porovnáváme s rámečky radiologů (fastMRI+, KneeMRI Rijeka).</p>
-    </div>
-    <div class="card reveal">
-      <p class="card-kicker">Výsledky</p>
-      <h3 class="card-title">AUROC 0,91 · 0,94 · 0,87</h3>
-      <p class="card-text">Křížová validace na trénovací sadě MRNet (1 130 vyšetření): abnormální nález 0,91, ruptura LCA 0,94, ruptura menisku 0,87. Přenos bez dotrénování na data jiné nemocnice (KneeMRI Rijeka, 230 vyšetření): ruptura LCA 0,82. AUROC je plocha pod ROC křivkou.</p>
-    </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Co zbývá</p>
-      <h3 class="card-title">Nezávislé testovací sady a dětská kolena</h3>
-      <p class="card-text">Oficiální validační sadu MRNet a uzamčené části ostatních datasetů jsme zatím nepoužili a model není kalibrovaný. Všechna data jsou od dospělých pacientů: přenos na dětská a dorostová kolena je hypotéza, kterou ověříme na datech partnerských nemocnic.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ── Pipeline ── -->
 <section class="pipeline" id="jak-to-funguje">
   <div class="reveal">
@@ -882,6 +849,37 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
     <small>Online schůzka. Ukážeme běh modelu na studiích z veřejného datasetu: DICOM na vstupu, zvýrazněné řezy, zpráva na výstupu.</small>
+  </div>
+</section>
+
+<!-- ── Validation status ── -->
+<section class="validation" id="validace">
+  <div class="reveal">
+    <p class="section-label">Stav validace</p>
+    <h2 class="section-title">Prototyp na úrovni <em>TRL 4</em></h2>
+    <p class="section-lead">TRL 4 znamená technologii ověřenou v laboratorním prostředí. U aEyes-knee to je ověření na veřejných datech dospělých pacientů, ne v klinickém provozu.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <p class="card-kicker">Data</p>
+      <h3 class="card-title">Čtyři veřejné datasety MR kolene</h3>
+      <p class="card-text">MRNet (Stanford): nálezy radiologa k celému vyšetření. RSNA Knee Abnormality Detection: nálezy vytažené z textu zpráv. fastMRI+ (NYU): rámečky kolem poškození menisku. KneeMRI (KBC Rijeka): stupně poranění předního zkříženého vazu. Každý dataset nese jiný typ anotací.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Architektura</p>
+      <h3 class="card-title">Slabě řízené učení s mapami důkazu</h3>
+      <p class="card-text">Model se učí hlavně z nálezů k celému vyšetření, bez označených míst na snímcích (slabě řízené učení). Čte řezy ve třech rovinách a průměruje výstupy více nezávisle natrénovaných sítí. Vlastní výstupní vrstva rozkládá každou predikci na mapy důkazu: které řezy a oblasti snímku ke skóre přispěly. Mapy porovnáváme s rámečky radiologů (fastMRI+, KneeMRI Rijeka).</p>
+    </div>
+    <div class="card reveal">
+      <p class="card-kicker">Výsledky</p>
+      <h3 class="card-title">AUROC 0,91 · 0,94 · 0,87</h3>
+      <p class="card-text">Křížová validace na trénovací sadě MRNet (1 130 vyšetření): abnormální nález 0,91, ruptura LCA 0,94, ruptura menisku 0,87. Přenos bez dotrénování na data jiné nemocnice (KneeMRI Rijeka, 230 vyšetření): ruptura LCA 0,82. AUROC je plocha pod ROC křivkou.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Co zbývá</p>
+      <h3 class="card-title">Nezávislé testovací sady a dětská kolena</h3>
+      <p class="card-text">Oficiální validační sadu MRNet a uzamčené části ostatních datasetů jsme zatím nepoužili a model není kalibrovaný. Všechna data jsou od dospělých pacientů: přenos na dětská a dorostová kolena je hypotéza, kterou ověříme na datech partnerských nemocnic.</p>
+    </div>
   </div>
 </section>
 
