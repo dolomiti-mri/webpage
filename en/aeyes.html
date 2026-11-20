@@ -290,7 +290,6 @@
     }
 
     .validation { padding-top: 0; }
-    .validation .section-lead { margin-top: 0; }
 
     /* ── Pipeline ── */
     .pipeline { background: var(--faint); }
@@ -734,7 +733,7 @@
   </div>
   <div class="stat">
     <div class="stat-num">Reasons shown</div>
-    <div class="stat-label">For every finding, it shows the slices that led to it.</div>
+    <div class="stat-label">For every finding, it shows the slices and image regions that led to it.</div>
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
@@ -767,8 +766,30 @@
 <section class="validation" id="validace">
   <div class="reveal">
     <p class="section-label">Validation status</p>
-    <p class="section-lead">The prototype has been validated on public data from adult patients (MRNet). Whether it carries over to children's and adolescents' knees is a hypothesis that we will test on data from partner hospitals.</p>
-    <!-- TODO: our own metrics and methodology -->
+    <h2 class="section-title">A prototype at <em>TRL 4</em></h2>
+    <p class="section-lead">TRL 4 means technology validated in a laboratory environment. For aEyes-knee that is validation on public data from adult patients, not in clinical operation.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <p class="card-kicker">Data</p>
+      <h3 class="card-title">Four public knee MRI datasets</h3>
+      <p class="card-text">MRNet (Stanford): radiologist labels for the whole study. RSNA Knee Abnormality Detection: findings extracted from report text. fastMRI+ (NYU): bounding boxes around meniscal damage. KneeMRI (Clinical Hospital Centre Rijeka): grades of anterior cruciate ligament injury. Each dataset carries a different type of annotation.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Architecture</p>
+      <h3 class="card-title">Weakly supervised learning with evidence maps</h3>
+      <p class="card-text">The model learns mainly from study-level labels, without marked locations in the images (weakly supervised learning). It reads slices in three planes and averages the outputs of several independently trained networks. Our own output layer decomposes each prediction into evidence maps: which slices and image regions contributed to the score. We compare the maps with radiologists' bounding boxes (fastMRI+, KneeMRI Rijeka).</p>
+    </div>
+    <div class="card reveal">
+      <p class="card-kicker">Results</p>
+      <h3 class="card-title">AUROC 0.91 · 0.94 · 0.87</h3>
+      <p class="card-text">Cross-validation on the MRNet training set (1,130 studies): abnormal finding 0.91, ACL tear 0.94, meniscal tear 0.87. Transfer without fine-tuning to data from another hospital (KneeMRI Rijeka, 230 studies): ACL tear 0.82. AUROC is the area under the ROC curve.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Still to do</p>
+      <h3 class="card-title">Independent test sets and children's knees</h3>
+      <p class="card-text">We have not yet used the official MRNet validation set or the locked parts of the other datasets, and the model is not calibrated. All the data comes from adult patients: whether the model carries over to children's and adolescents' knees is a hypothesis that we will test on data from partner hospitals.</p>
+    </div>
   </div>
 </section>
 
@@ -971,7 +992,7 @@
   <div class="reveal">
     <p class="section-label">Partnership</p>
     <h2 class="section-title">We are looking for partner hospitals, radiologists and investors</h2>
-    <p>If you are interested in a pilot deployment, a reader study or a data partnership, get in touch.</p>
+    <p>If you are interested in a pilot deployment, a reader study or a data partnership, get in touch. We will walk you through the demo in detail in a meeting.</p>
     <p class="note">aEyes is under development and is not yet a certified medical device. It is not intended for clinical use.</p>
   </div>
   <div class="reveal">
