@@ -733,7 +733,7 @@
   </div>
   <div class="stat">
     <div class="stat-num">Zdůvodněný nález</div>
-    <div class="stat-label">Ke každému nálezu ukáže řezy, které k němu vedly.</div>
+    <div class="stat-label">Ke každému nálezu ukáže řezy a oblasti snímku, které k němu vedly.</div>
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
@@ -758,8 +758,18 @@
       <h3 class="card-title">Dva nálezy, na kterých závisí další postup</h3>
       <p class="card-text">Ruptura předního zkříženého vazu a ruptura menisku rozhodují mezi konzervativní léčbou a operací. Z literatury: ve čtenářské studii Stanford MRNet zvýšila asistence modelu specificitu lékařů u ruptury LCA o 4,8 procentního bodu: méně falešně pozitivních nálezů u pacientů bez ruptury.</p>
     </div>
+    <div class="card reveal">
+      <p class="card-kicker">Děti</p>
+      <h3 class="card-title">Dětské koleno není malé koleno dospělého</h3>
+      <p class="card-text">Otevřené růstové ploténky a vývojové varianty osifikace mohou nástroje natrénované na dospělých číst jako patologii. Mezi nástroji AI pro MR kolene s označením CE nebo schválením FDA jsme nenašli žádný určený pro děti.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Čas</p>
+      <h3 class="card-title">U dětí záleží na včasném rozpoznání</h3>
+      <p class="card-text">Z literatury: u dětí do 14 let zvyšuje odklad operace LCA delší než 12 týdnů závažnost poranění menisku a chrupavky. Cílíme na regionální nemocnice bez radiologa se zaměřením na dětský pohybový aparát.</p>
+    </div>
   </div>
-  <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes)</p>
+  <p class="source reveal">Zdroje: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes); Lawrence et al., American Journal of Sports Medicine 2011</p>
 </section>
 
 <!-- ── Validation status ── -->
@@ -767,7 +777,7 @@
   <div class="reveal">
     <p class="section-label">Stav validace</p>
     <h2 class="section-title">Prototyp na úrovni <em>TRL 4</em></h2>
-    <p class="section-lead">TRL 4 znamená technologii ověřenou v laboratorním prostředí. U aEyes-knee to je ověření na veřejných datech, ne v klinickém provozu.</p>
+    <p class="section-lead">TRL 4 znamená technologii ověřenou v laboratorním prostředí. U aEyes-knee to je ověření na veřejných datech dospělých pacientů, ne v klinickém provozu.</p>
   </div>
   <div class="cards">
     <div class="card reveal">
@@ -788,7 +798,7 @@
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Co zbývá</p>
       <h3 class="card-title">Nezávislé testovací sady a dětská kolena</h3>
-      <p class="card-text">Oficiální validační sadu MRNet a uzamčené části ostatních datasetů jsme zatím nepoužili a model není kalibrovaný. Datasety nejsou zaměřené na děti a dospívající: přenos na dětská a dorostová kolena je hypotéza, kterou ověříme na datech partnerských nemocnic.</p>
+      <p class="card-text">Oficiální validační sadu MRNet a uzamčené části ostatních datasetů jsme zatím nepoužili a model není kalibrovaný. Všechna data jsou od dospělých pacientů: přenos na dětská a dorostová kolena je hypotéza, kterou ověříme na datech partnerských nemocnic.</p>
     </div>
   </div>
 </section>

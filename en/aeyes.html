@@ -733,7 +733,7 @@
   </div>
   <div class="stat">
     <div class="stat-num">Reasons shown</div>
-    <div class="stat-label">For every finding, it shows the slices that led to it.</div>
+    <div class="stat-label">For every finding, it shows the slices and image regions that led to it.</div>
   </div>
   <div class="stat">
     <div class="stat-num">EU MDR</div>
@@ -758,8 +758,18 @@
       <h3 class="card-title">Two findings decide what happens next</h3>
       <p class="card-text">An ACL tear and a meniscal tear decide between conservative treatment and surgery. From the literature: in the Stanford MRNet reader study, model assistance raised clinicians' specificity for ACL tears by 4.8 percentage points: fewer false positives in patients without a tear.</p>
     </div>
+    <div class="card reveal">
+      <p class="card-kicker">Children</p>
+      <h3 class="card-title">A child's knee is not a small adult knee</h3>
+      <p class="card-text">Tools trained on adults may read open growth plates and developmental ossification variants as pathology. Among the CE-marked or FDA-cleared AI tools for knee MRI we found none intended for children.</p>
+    </div>
+    <div class="card reveal" style="transition-delay:0.15s">
+      <p class="card-kicker">Time</p>
+      <h3 class="card-title">In children, early recognition matters</h3>
+      <p class="card-text">From the literature: in children aged 14 or younger, delaying ACL surgery by more than 12 weeks increases the severity of meniscal and chondral injuries. We focus on regional hospitals without a paediatric musculoskeletal radiologist.</p>
+    </div>
   </div>
-  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes)</p>
+  <p class="source reveal">Sources: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes); Lawrence et al., American Journal of Sports Medicine 2011</p>
 </section>
 
 <!-- ── Validation status ── -->
@@ -767,7 +777,7 @@
   <div class="reveal">
     <p class="section-label">Validation status</p>
     <h2 class="section-title">A prototype at <em>TRL 4</em></h2>
-    <p class="section-lead">TRL 4 means technology validated in a laboratory environment. For aEyes-knee that is validation on public data, not in clinical operation.</p>
+    <p class="section-lead">TRL 4 means technology validated in a laboratory environment. For aEyes-knee that is validation on public data from adult patients, not in clinical operation.</p>
   </div>
   <div class="cards">
     <div class="card reveal">
@@ -788,7 +798,7 @@
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Still to do</p>
       <h3 class="card-title">Independent test sets and children's knees</h3>
-      <p class="card-text">We have not yet used the official MRNet validation set or the locked parts of the other datasets, and the model is not calibrated. The datasets do not focus on children and adolescents: whether the model carries over to their knees is a hypothesis that we will test on data from partner hospitals.</p>
+      <p class="card-text">We have not yet used the official MRNet validation set or the locked parts of the other datasets, and the model is not calibrated. All the data comes from adult patients: whether the model carries over to children's and adolescents' knees is a hypothesis that we will test on data from partner hospitals.</p>
     </div>
   </div>
 </section>
