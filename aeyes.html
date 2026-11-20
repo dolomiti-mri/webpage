@@ -758,18 +758,8 @@
       <h3 class="card-title">Dva nálezy, na kterých závisí další postup</h3>
       <p class="card-text">Ruptura předního zkříženého vazu a ruptura menisku rozhodují mezi konzervativní léčbou a operací. Z literatury: ve čtenářské studii Stanford MRNet zvýšila asistence modelu specificitu lékařů u ruptury LCA o 4,8 procentního bodu: méně falešně pozitivních nálezů u pacientů bez ruptury.</p>
     </div>
-    <div class="card reveal">
-      <p class="card-kicker">Děti</p>
-      <h3 class="card-title">Dětské koleno není malé koleno dospělého</h3>
-      <p class="card-text">Otevřené růstové ploténky a vývojové varianty osifikace mohou nástroje natrénované na dospělých číst jako patologii. Mezi nástroji AI pro MR kolene s označením CE nebo schválením FDA jsme nenašli žádný určený pro děti.</p>
-    </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Čas</p>
-      <h3 class="card-title">U dětí záleží na včasném rozpoznání</h3>
-      <p class="card-text">Z literatury: u dětí do 14 let zvyšuje odklad operace LCA delší než 12 týdnů závažnost poranění menisku a chrupavky. Cílíme na regionální nemocnice bez radiologa se zaměřením na dětský pohybový aparát.</p>
-    </div>
   </div>
-  <p class="source reveal">Zdroje: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes); Lawrence et al., American Journal of Sports Medicine 2011</p>
+  <p class="source reveal">Zdroj: Bien et al., PLOS Medicine 2018 (čtenářská studie modelu MRNet, ne aEyes)</p>
 </section>
 
 <!-- ── Validation status ── -->
@@ -787,8 +777,8 @@
     </div>
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Architektura</p>
-      <h3 class="card-title">Soubor modelů nad třemi rovinami</h3>
-      <p class="card-text">Konvoluční neuronová síť čte jednotlivé řezy, zvlášť v sagitální, koronální a axiální rovině. Výstupy více nezávisle natrénovaných modelů se průměrují a tři roviny se spojují do jednoho výsledku pro každý nález.</p>
+      <h3 class="card-title">Slabě řízené učení s mapami důkazu</h3>
+      <p class="card-text">Model se učí hlavně z nálezů k celému vyšetření, bez označených míst na snímcích (slabě řízené učení). Čte řezy ve třech rovinách a průměruje výstupy více nezávisle natrénovaných sítí. Vlastní výstupní vrstva rozkládá každou predikci na mapy důkazu: které řezy a oblasti snímku ke skóre přispěly. Mapy porovnáváme s rámečky radiologů (fastMRI+, KneeMRI Rijeka); validované zatím nejsou.</p>
     </div>
     <div class="card reveal">
       <p class="card-kicker">Výsledky</p>

@@ -758,18 +758,8 @@
       <h3 class="card-title">Two findings decide what happens next</h3>
       <p class="card-text">An ACL tear and a meniscal tear decide between conservative treatment and surgery. From the literature: in the Stanford MRNet reader study, model assistance raised clinicians' specificity for ACL tears by 4.8 percentage points: fewer false positives in patients without a tear.</p>
     </div>
-    <div class="card reveal">
-      <p class="card-kicker">Children</p>
-      <h3 class="card-title">A child's knee is not a small adult knee</h3>
-      <p class="card-text">Tools trained on adults may read open growth plates and developmental ossification variants as pathology. Among the CE-marked or FDA-cleared AI tools for knee MRI we found none intended for children.</p>
-    </div>
-    <div class="card reveal" style="transition-delay:0.15s">
-      <p class="card-kicker">Time</p>
-      <h3 class="card-title">In children, early recognition matters</h3>
-      <p class="card-text">From the literature: in children aged 14 or younger, delaying ACL surgery by more than 12 weeks increases the severity of meniscal and chondral injuries. We focus on regional hospitals without a paediatric musculoskeletal radiologist.</p>
-    </div>
   </div>
-  <p class="source reveal">Sources: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes); Lawrence et al., American Journal of Sports Medicine 2011</p>
+  <p class="source reveal">Source: Bien et al., PLOS Medicine 2018 (reader study of the MRNet model, not of aEyes)</p>
 </section>
 
 <!-- ── Validation status ── -->
@@ -787,8 +777,8 @@
     </div>
     <div class="card reveal" style="transition-delay:0.15s">
       <p class="card-kicker">Architecture</p>
-      <h3 class="card-title">An ensemble of models over three planes</h3>
-      <p class="card-text">A convolutional neural network reads individual slices, separately in the sagittal, coronal and axial plane. Outputs of several independently trained models are averaged, and the three planes are combined into one result per finding.</p>
+      <h3 class="card-title">Weakly supervised learning with evidence maps</h3>
+      <p class="card-text">The model learns mainly from study-level labels, without marked locations in the images (weakly supervised learning). It reads slices in three planes and averages the outputs of several independently trained networks. Our own output layer decomposes each prediction into evidence maps: which slices and image regions contributed to the score. We compare the maps with radiologists' bounding boxes (fastMRI+, KneeMRI Rijeka); they are not validated yet.</p>
     </div>
     <div class="card reveal">
       <p class="card-kicker">Results</p>
